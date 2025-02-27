@@ -37,7 +37,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, hre
         {description}
       </p>
       <div className="mt-4 text-sm font-medium text-gratuity-700 group-hover:text-gratuity-800 flex items-center transition-colors">
-        Leer más <span className="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
+        Read more <span className="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
       </div>
     </Link>
   );
@@ -47,62 +47,62 @@ const FeatureCards = () => {
   const features = [
     {
       icon: <BookOpen size={24} />,
-      title: "Ley de Gratuity en UAE",
-      description: "Descubre todo sobre la ley laboral que regula las gratificaciones en Emiratos Árabes Unidos.",
+      title: "UAE Gratuity Law",
+      description: "Discover everything about the labor law that regulates gratuities in the United Arab Emirates.",
       href: "/gratuity-law-uae"
     },
     {
       icon: <FilePlus size={24} />,
-      title: "Contratos Limitados vs Ilimitados",
-      description: "Entérate de las diferencias y cómo afectan a tu gratificación final.",
+      title: "Limited vs Unlimited Contracts",
+      description: "Learn about the differences and how they affect your final gratuity payment.",
       href: "/limited-vs-unlimited-contracts"
     },
     {
       icon: <UserCheck size={24} />,
-      title: "Elegibilidad para Gratuity",
-      description: "Conoce los requisitos para ser elegible para recibir gratificación laboral en UAE.",
+      title: "Gratuity Eligibility",
+      description: "Know the requirements to be eligible for gratuity payment in the UAE.",
       href: "/gratuity-eligibility"
     },
     {
       icon: <Calculator size={24} />,
-      title: "Cómo Calcular Gratuity",
-      description: "Aprende la fórmula exacta y cómo calcular tu gratificación paso a paso.",
+      title: "How to Calculate Gratuity",
+      description: "Learn the exact formula and how to calculate your gratuity step by step.",
       href: "/gratuity-calculation-uae"
     },
     {
       icon: <Landmark size={24} />,
-      title: "Factores que Afectan el Gratuity",
-      description: "Descubre qué factores pueden aumentar o disminuir tu pago final.",
+      title: "Factors Affecting Gratuity",
+      description: "Discover what factors can increase or decrease your final payment.",
       href: "/factors-affecting-gratuity"
     },
     {
       icon: <Briefcase size={24} />,
-      title: "Gratuity para Empleados Despedidos",
-      description: "Conoce tus derechos en caso de despido y cómo se calcula tu gratificación.",
+      title: "Gratuity for Terminated Employees",
+      description: "Know your rights in case of dismissal and how your gratuity is calculated.",
       href: "/gratuity-terminated-employees"
     },
     {
       icon: <FileText size={24} />,
-      title: "Cómo Reclamar tu Gratuity",
-      description: "Guía paso a paso para reclamar tu gratificación laboral al finalizar tu contrato.",
+      title: "How to Claim Your Gratuity",
+      description: "Step-by-step guide to claim your labor gratuity at the end of your contract.",
       href: "/how-to-claim-gratuity"
     },
     {
       icon: <Scale size={24} />,
-      title: "Disputas por Gratuity",
-      description: "Qué hacer cuando tu empleador no paga la gratificación correctamente.",
+      title: "Gratuity Disputes",
+      description: "What to do when your employer doesn't pay the gratuity correctly.",
       href: "/gratuity-dispute-resolution"
     },
     {
       icon: <DollarSign size={24} />,
-      title: "¿Es el Gratuity Sujeto a Impuestos?",
-      description: "Información sobre la fiscalidad de las gratificaciones en EAU.",
+      title: "Is Gratuity Taxable?",
+      description: "Information about taxation of gratuities in the UAE.",
       href: "/is-gratuity-taxable-uae"
     },
     {
       icon: <HelpCircle size={24} />,
-      title: "Preguntas Frecuentes",
-      description: "Respuestas a las dudas más comunes sobre gratificaciones en UAE.",
+      title: "Frequently Asked Questions",
+      description: "Answers to the most common questions about gratuities in the UAE.",
       href: "/gratuity-faqs"
     }
   ];
