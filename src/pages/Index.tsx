@@ -26,7 +26,7 @@ const Index = () => {
           name="keywords" 
           content="UAE gratuity calculator, end of service calculator UAE, gratuity payment UAE, UAE labor law gratuity, calculate gratuity online, gratuity eligibility UAE, how to claim gratuity" 
         />
-        <link rel="canonical" href="https://www.actudubai.com/" />
+        <link rel="canonical" href="https://actudubai.com/" />
       </Helmet>
 
       <div className="flex flex-col min-h-screen">
