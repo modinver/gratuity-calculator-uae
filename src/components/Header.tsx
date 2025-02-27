@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Search } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import Logo from './Logo';
 
 interface DropdownProps {
   title: string;
@@ -124,11 +125,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           <div className="flex-shrink-0">
-            <Link to="/" className="flex items-center">
-              <span className="text-lg font-semibold text-gratuity-800">
-                Gratuity UAE
-              </span>
-            </Link>
+            <Logo />
           </div>
           
           {/* Desktop Navigation */}
