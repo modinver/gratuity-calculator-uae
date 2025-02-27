@@ -1,0 +1,10 @@
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://gratuity-uae-calculator.com/sitemap.xml
+
+# Disallow specific directories if needed
+# Disallow: /private/
+# Disallow: /admin/
