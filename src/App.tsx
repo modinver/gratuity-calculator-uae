@@ -8,6 +8,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import GratuityCalculationGuide from "./pages/GratuityCalculationGuide";
+import GratuityLawUAEGuide from "./pages/GratuityLawUAEGuide";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/gratuity-calculation-uae-guide" element={<GratuityCalculationGuide />} />
+            <Route path="/gratuity-law-uae-guide" element={<GratuityLawUAEGuide />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
