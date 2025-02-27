@@ -80,7 +80,7 @@ const Header = () => {
   // Navigation structure
   const navItems = {
     laws: {
-      title: t('gratuity_laws'),
+      title: 'Gratuity Laws',
       items: [
         { label: 'UAE Gratuity Law', href: '/gratuity-law-uae-guide' },
         { label: 'Limited vs Unlimited Contracts', href: '/limited-vs-unlimited-contracts' },
@@ -111,7 +111,7 @@ const Header = () => {
       ]
     },
     managing: {
-      title: 'Managing Gratuity',
+      title: 'Managing',
       items: [
         { label: 'Best Ways to Invest Gratuity', href: '/invest-gratuity-uae' },
         { label: 'Financial Planning After Gratuity', href: '/financial-planning-gratuity' }
@@ -141,7 +141,7 @@ const Header = () => {
               </li>
               <li>
                 <NavDropdown 
-                  title={t('gratuity_laws')}
+                  title="Gratuity Laws"
                   items={navItems.laws.items}
                   isOpen={openDropdown === 'laws'}
                   toggleDropdown={() => toggleDropdown('laws')}
@@ -173,7 +173,7 @@ const Header = () => {
               </li>
               <li>
                 <NavDropdown 
-                  title="Managing Gratuity"
+                  title="Managing"
                   items={navItems.managing.items}
                   isOpen={openDropdown === 'managing'}
                   toggleDropdown={() => toggleDropdown('managing')}
@@ -220,10 +220,10 @@ const Header = () => {
               </Link>
             </div>
             
-            {/* Gratuity Laws & Rules */}
+            {/* Gratuity Laws */}
             <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                Gratuity Laws & Rules
+                Gratuity Laws
               </p>
               {navItems.laws.items.map((item, index) => (
                 <Link 
@@ -257,7 +257,7 @@ const Header = () => {
             {/* Gratuity Claims & Disputes */}
             <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                Gratuity Claims & Disputes
+                Claims & Disputes
               </p>
               {navItems.claims.items.map((item, index) => (
                 <Link 
@@ -274,7 +274,7 @@ const Header = () => {
             {/* Gratuity Tax & Deductions */}
             <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                Gratuity Tax & Deductions
+                Tax & Deductions
               </p>
               {navItems.tax.items.map((item, index) => (
                 <Link 
@@ -288,10 +288,10 @@ const Header = () => {
               ))}
             </div>
             
-            {/* Managing Your Gratuity */}
+            {/* Managing */}
             <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                Managing Your Gratuity
+                Managing
               </p>
               {navItems.managing.items.map((item, index) => (
                 <Link 
