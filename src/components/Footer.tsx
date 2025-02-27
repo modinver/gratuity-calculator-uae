@@ -108,7 +108,7 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="flex items-center justify-center md:justify-start">
               <Mail size={18} className="text-[#38bdf8] mr-2" />
-              <a href="mailto:info@gratuityuae.com" className="text-gray-300 hover:text-[#38bdf8]">info@gratuityuae.com</a>
+              <a href="mailto:info@actudubai.com" className="text-gray-300 hover:text-[#38bdf8]">info@actudubai.com</a>
             </div>
             <div className="flex items-center justify-center md:justify-end">
               <MapPin size={18} className="text-[#38bdf8] mr-2" />

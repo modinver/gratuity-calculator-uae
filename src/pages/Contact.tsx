@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -121,8 +120,8 @@ const Contact = () => {
                 <div className="mt-4 space-y-2">
                   <p className="flex items-center justify-center gap-2">
                     <Mail className="h-4 w-4" />
-                    <a href="mailto:info@gratuityuae.com" className="hover:text-gratuity-600">
-                      info@gratuityuae.com
+                    <a href="mailto:info@actudubai.com" className="hover:text-gratuity-600">
+                      info@actudubai.com
                     </a>
                   </p>
                 </div>
