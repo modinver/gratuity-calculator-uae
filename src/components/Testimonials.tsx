@@ -33,19 +33,19 @@ const Testimonial: React.FC<TestimonialProps> = ({ content, author, role }) => {
 const Testimonials = () => {
   const testimonials = [
     {
-      content: "Esta calculadora me ayudó a entender exactamente cuánto gratuity me correspondía. Cuando mi empleador me ofreció menos, pude negociar con confianza mostrando los cálculos correctos.",
+      content: "This calculator helped me understand exactly how much gratuity I was entitled to. When my employer offered me less, I was able to confidently negotiate by showing the correct calculations.",
       author: "Alejandro R.",
-      role: "Ingeniero, 6 años en Dubai"
+      role: "Engineer, 6 years in Dubai"
     },
     {
-      content: "Después de usar esta herramienta, descubrí que mi gratuity debía ser casi un 30% mayor de lo que mi empresa había calculado inicialmente. ¡Ha sido un gran ahorro!",
-      author: "María L.",
-      role: "Contadora, 4 años en Abu Dhabi"
+      content: "After using this tool, I discovered my gratuity should be almost 30% higher than what my company had initially calculated. It's been a significant saving!",
+      author: "Maria L.",
+      role: "Accountant, 4 years in Abu Dhabi"
     },
     {
-      content: "La información sobre contratos limitados e ilimitados me ayudó a tomar la decisión correcta al firmar mi nuevo contrato. Definitivamente me ha dado una ventaja financiera.",
+      content: "The information about limited and unlimited contracts helped me make the right decision when signing my new contract. It has definitely given me a financial advantage.",
       author: "Javier M.",
-      role: "Ejecutivo de Marketing, UAE"
+      role: "Marketing Executive, UAE"
     }
   ];
 
@@ -53,10 +53,10 @@ const Testimonials = () => {
     <div>
       <div className="text-center mb-12">
         <h2 className="text-3xl font-bold text-gray-900">
-          Valorado por Profesionales en UAE
+          Stories from Grateful Gratuity Recipients
         </h2>
         <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-          Miles de expatriados y residentes en Emiratos Árabes Unidos confían en nuestra calculadora para planificar su futuro financiero.
+          Thousands of expatriates and residents in the United Arab Emirates trust our calculator to plan their financial future.
         </p>
       </div>
       
