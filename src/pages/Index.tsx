@@ -19,15 +19,16 @@ const Index = () => {
       <Helmet>
         <title>
           {language === 'en' 
-            ? 'UAE Gratuity Calculator | Calculate your end-of-service benefits in UAE'
+            ? 'Free Gratuity Calculator Updated to UAE law - ActuDubai.com'
             : 'حاسبة مكافأة نهاية الخدمة | احسب تعويضاتك في الإمارات العربية المتحدة'}
         </title>
         <meta 
           name="description" 
           content={language === 'en'
-            ? 'Calculate your gratuity in UAE with our free calculator. Get accurate results based on the 2024 UAE Labor Law.'
+            ? 'Calculate your Gratuity now and check if your payment is in line with the current law.'
             : 'احسب مكافأة نهاية خدمتك في الإمارات باستخدام حاسبتنا المجانية. احصل على نتائج دقيقة استنادًا إلى قانون العمل الإماراتي 2024.'}
         />
+        <meta name="keywords" content="Gratuity Calculator UAE, Gratuity Law, Gratuity Payment" />
         <html lang={language} />
       </Helmet>
       
