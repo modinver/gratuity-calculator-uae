@@ -12,20 +12,20 @@ interface FaqItemProps {
 
 const FaqItem: React.FC<FaqItemProps> = ({ question, answer, isOpen, toggleOpen }) => {
   return (
-    <div className="border-b border-gray-200 last:border-0">
+    <div className="border-b border-gray-100 last:border-0">
       <button
-        className="flex justify-between items-center w-full py-4 text-left"
+        className="flex justify-between items-center w-full py-5 text-center"
         onClick={toggleOpen}
       >
-        <h3 className="text-base sm:text-lg font-medium text-gray-900">{question}</h3>
-        <span className="ml-6 flex-shrink-0">
+        <h3 className="text-base sm:text-lg font-medium text-gray-900 mx-auto pr-8">{question}</h3>
+        <span className="flex-shrink-0 text-gray-400">
           {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
         </span>
       </button>
 
       {isOpen && (
-        <div className="pb-5 animate-slide-down">
-          <div className="text-base text-gray-700 space-y-2">
+        <div className="pb-6 px-4 animate-slide-down max-w-3xl mx-auto">
+          <div className="text-base text-gray-700 space-y-3">
             {answer}
           </div>
         </div>
@@ -144,16 +144,16 @@ const FaqSection = () => {
   ];
 
   return (
-    <div className="w-full">
-      <div className="text-center mb-10">
+    <div className="w-full max-w-4xl mx-auto">
+      <div className="text-center mb-12">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
         <p className="mt-4 text-lg text-gray-600">
           Find answers to the most common questions about gratuity in the UAE
         </p>
       </div>
       
-      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-        <div className="divide-y divide-gray-200">
+      <div className="bg-white rounded-xl shadow-sm border border-gray-50 overflow-hidden">
+        <div className="divide-y divide-gray-100">
           {faqs.map((faq, index) => (
             <FaqItem
               key={index}
@@ -166,7 +166,7 @@ const FaqSection = () => {
         </div>
       </div>
       
-      <div className="mt-8 text-center">
+      <div className="mt-10 text-center">
         <Link 
           to="/gratuity-faqs"
           className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gratuity-600 hover:bg-gratuity-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gratuity-500 transition-colors"
