@@ -353,3 +353,31 @@ const GratuityCalculator = () => {
                   {result.deductions > 0 && (
                     <tr>
                       <td className="px-4 py-3 text-sm text-gray-700">{t('deductions_unpaid')}</td>
+                      <td className="px-4 py-3 text-sm font-medium text-gray-900 text-red-600">
+                        -{formatCurrency(result.deductions, 'AED')}
+                      </td>
+                    </tr>
+                  )}
+                  <tr className="bg-gray-50">
+                    <td className="px-4 py-3 text-sm font-semibold text-gray-900">{t('total')}</td>
+                    <td className="px-4 py-3 text-sm font-semibold text-gratuity-800">
+                      {formatCurrency(result.gratuity, 'AED')}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div className="mt-6 text-sm text-gray-500">
+              <p>
+                <strong>{t('note')}</strong> {t('calculation_disclaimer')}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default GratuityCalculator;
