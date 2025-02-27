@@ -169,7 +169,7 @@ const GratuityCalculator = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div id="gratuity-calculator" className="w-full max-w-4xl mx-auto">
       <div className="glassmorphism p-6 sm:p-8 md:p-10">
         <h2 className="text-2xl sm:text-3xl font-semibold text-gratuity-900 mb-6 text-center">
           {t('calculator_title')}

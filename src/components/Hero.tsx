@@ -7,6 +7,13 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const Hero = () => {
   const { t, language } = useLanguage();
   
+  const scrollToCalculator = () => {
+    const calculatorElement = document.getElementById('gratuity-calculator');
+    if (calculatorElement) {
+      calculatorElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <div className="relative bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-20">
@@ -34,13 +41,13 @@ const Hero = () => {
         </p>
         
         <div className="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 animate-slide-down delay-200">
-          <a
-            href="https://actudubai.com/sitemap.xml"
+          <button
+            onClick={scrollToCalculator}
             className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gratuity-600 hover:bg-gratuity-700 shadow-sm hover:shadow transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gratuity-500"
           >
             {t('use_calculator')}
             <ArrowDown className="ml-2 h-4 w-4" />
-          </a>
+          </button>
           
           <Link
             to="/gratuity-law-uae-guide"
