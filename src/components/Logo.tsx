@@ -21,8 +21,8 @@ const Logo = () => {
       
       <div className="flex flex-col">
         <span className="text-lg font-bold text-gratuity-800 leading-none">ActuDbai</span>
-        <Separator className="my-1" />
-        <span className="text-xs text-gray-600 font-light">gratuity calculator</span>
+        <Separator className="my-0.5" />
+        <span className="text-xs text-gray-600 font-light -mt-0.5">gratuity calculator</span>
       </div>
     </Link>
   );
