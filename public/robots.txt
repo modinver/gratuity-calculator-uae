@@ -3,7 +3,19 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://gratuity-uae-calculator.com/sitemap.xml
+Sitemap: https://actudubai.com/sitemap.xml
+
+# Specific URLs
+# https://actudubai.com/
+# https://actudubai.com/how-to-claim-gratuity-uae/
+# https://actudubai.com/best-way-invest-gratuity-uae/
+# https://actudubai.com/is-gratuity-taxable-in-uae/
+# https://actudubai.com/does-resignation-affect-gratuity-uae/
+# https://actudubai.com/gratuity-limited-contract-uae/
+# https://actudubai.com/how-long-to-receive-gratuity-uae/
+# https://actudubai.com/gratuity-law-uae-guide/
+# https://actudubai.com/who-is-eligible-for-gratuity-uae/
+# https://actudubai.com/gratuity-calculation-uae-guide/
 
 # Disallow specific directories if needed
 # Disallow: /private/
