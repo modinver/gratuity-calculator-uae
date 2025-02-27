@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import GratuityCalculationGuide from "./pages/GratuityCalculationGuide";
 import GratuityLawUAEGuide from "./pages/GratuityLawUAEGuide";
+import GratuityEligibilityUAE from "./pages/GratuityEligibilityUAE";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/gratuity-calculation-uae-guide" element={<GratuityCalculationGuide />} />
             <Route path="/gratuity-law-uae-guide" element={<GratuityLawUAEGuide />} />
+            <Route path="/who-is-eligible-for-gratuity-uae" element={<GratuityEligibilityUAE />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
