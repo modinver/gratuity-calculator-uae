@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, MapPin, Phone, Heart, Star } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, MapPin, Heart, Star } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -114,14 +114,10 @@ const Footer = () => {
         </div>
         
         <div className="mt-16 pt-8 border-t border-gray-200 border-opacity-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="flex items-center justify-center md:justify-start">
               <Mail size={18} className="text-[#38bdf8] mr-2" />
               <a href="mailto:info@gratuityuae.com" className="text-white hover:text-[#38bdf8]">info@gratuityuae.com</a>
-            </div>
-            <div className="flex items-center justify-center">
-              <Phone size={18} className="text-[#38bdf8] mr-2" />
-              <a href="tel:+971 4 123 4567" className="text-white hover:text-[#38bdf8]">+971 4 123 4567</a>
             </div>
             <div className="flex items-center justify-center md:justify-end">
               <MapPin size={18} className="text-[#38bdf8] mr-2" />
