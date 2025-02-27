@@ -78,13 +78,13 @@ const Header = () => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
 
-  // Navigation structure
+  // Navigation structure updated with available pillar pages
   const navItems = {
     laws: {
       title: 'Gratuity Laws',
       items: [
         { label: 'UAE Gratuity Law', href: '/gratuity-law-uae-guide' },
-        { label: 'Limited vs Unlimited Contracts', href: '/limited-vs-unlimited-contracts' },
+        { label: 'Limited vs Unlimited Contracts', href: '/gratuity-limited-contract-uae' },
         { label: 'Eligibility for Gratuity', href: '/who-is-eligible-for-gratuity-uae' }
       ]
     },
@@ -92,30 +92,21 @@ const Header = () => {
       title: t('calculation'),
       items: [
         { label: 'How to Calculate Gratuity', href: '/gratuity-calculation-uae-guide' },
-        { label: 'Factors Affecting Gratuity', href: '/factors-affecting-gratuity' },
-        { label: 'Gratuity for Terminated Employees', href: '/gratuity-terminated-employees' }
+        { label: 'Does Resignation Affect Gratuity', href: '/does-resignation-affect-gratuity-uae' },
+        { label: 'Time to Receive Gratuity', href: '/how-long-to-receive-gratuity-uae' }
       ]
     },
     claims: {
       title: 'Claims & Disputes',
       items: [
-        { label: 'How to Claim Gratuity', href: '/how-to-claim-gratuity-uae' },
-        { label: 'Employer Did Not Pay Gratuity', href: '/unpaid-gratuity-uae' },
-        { label: 'Legal Actions & Dispute Resolution', href: '/gratuity-dispute-resolution' }
+        { label: 'How to Claim Gratuity', href: '/how-to-claim-gratuity-uae' }
       ]
     },
     tax: {
-      title: 'Tax & Deductions',
+      title: 'Tax & Management',
       items: [
-        { label: 'Is Gratuity Taxable?', href: '/is-gratuity-taxable-in-uae/' },
-        { label: 'Deductions & Salary Impact', href: '/gratuity-deductions-uae' }
-      ]
-    },
-    managing: {
-      title: 'Managing',
-      items: [
-        { label: 'Best Ways to Invest Gratuity', href: '/invest-gratuity-uae' },
-        { label: 'Financial Planning After Gratuity', href: '/financial-planning-gratuity' }
+        { label: 'Is Gratuity Taxable?', href: '/is-gratuity-taxable-in-uae' },
+        { label: 'Best Ways to Invest Gratuity', href: '/best-way-invest-gratuity-uae' }
       ]
     }
   };
@@ -162,18 +153,10 @@ const Header = () => {
               </li>
               <li>
                 <NavDropdown 
-                  title="Tax & Deductions"
+                  title="Tax & Management"
                   items={navItems.tax.items}
                   isOpen={openDropdown === 'tax'}
                   toggleDropdown={() => toggleDropdown('tax')}
-                />
-              </li>
-              <li>
-                <NavDropdown 
-                  title="Managing"
-                  items={navItems.managing.items}
-                  isOpen={openDropdown === 'managing'}
-                  toggleDropdown={() => toggleDropdown('managing')}
                 />
               </li>
             </ul>
@@ -268,29 +251,12 @@ const Header = () => {
               ))}
             </div>
             
-            {/* Gratuity Tax & Deductions */}
+            {/* Tax & Management */}
             <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                Tax & Deductions
+                Tax & Management
               </p>
               {navItems.tax.items.map((item, index) => (
-                <Link 
-                  key={index}
-                  to={item.href}
-                  className="block px-3 py-1.5 rounded-md text-xs text-gray-700 hover:text-gratuity-700 hover:bg-gray-50 ml-2"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-            
-            {/* Managing */}
-            <div className="py-1">
-              <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
-                Managing
-              </p>
-              {navItems.managing.items.map((item, index) => (
                 <Link 
                   key={index}
                   to={item.href}
