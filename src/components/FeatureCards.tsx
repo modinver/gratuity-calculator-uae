@@ -6,12 +6,12 @@ import {
   Calculator, 
   FilePlus, 
   FileText, 
-  HelpCircle, 
-  Landmark,
   Scale,
   UserCheck,
   Briefcase,
-  DollarSign
+  DollarSign,
+  Clock,
+  FileQuestion
 } from 'lucide-react';
 
 interface FeatureCardProps {
@@ -49,61 +49,55 @@ const FeatureCards = () => {
       icon: <BookOpen size={24} />,
       title: "UAE Gratuity Law",
       description: "Discover everything about the labor law that regulates gratuities in the United Arab Emirates.",
-      href: "/gratuity-law-uae"
+      href: "/gratuity-law-uae-guide"
     },
     {
       icon: <FilePlus size={24} />,
       title: "Limited vs Unlimited Contracts",
       description: "Learn about the differences and how they affect your final gratuity payment.",
-      href: "/limited-vs-unlimited-contracts"
+      href: "/gratuity-limited-contract-uae"
     },
     {
       icon: <UserCheck size={24} />,
       title: "Gratuity Eligibility",
       description: "Know the requirements to be eligible for gratuity payment in the UAE.",
-      href: "/gratuity-eligibility"
+      href: "/who-is-eligible-for-gratuity-uae"
     },
     {
       icon: <Calculator size={24} />,
       title: "How to Calculate Gratuity",
       description: "Learn the exact formula and how to calculate your gratuity step by step.",
-      href: "/gratuity-calculation-uae"
+      href: "/gratuity-calculation-uae-guide"
     },
     {
-      icon: <Landmark size={24} />,
-      title: "Factors Affecting Gratuity",
-      description: "Discover what factors can increase or decrease your final payment.",
-      href: "/factors-affecting-gratuity"
+      icon: <FileQuestion size={24} />,
+      title: "Does Resignation Affect Gratuity",
+      description: "Discover how resignation impacts your gratuity entitlements based on contract type and service duration.",
+      href: "/does-resignation-affect-gratuity-uae"
     },
     {
       icon: <Briefcase size={24} />,
-      title: "Gratuity for Terminated Employees",
-      description: "Know your rights in case of dismissal and how your gratuity is calculated.",
-      href: "/gratuity-terminated-employees"
+      title: "How to Claim Gratuity",
+      description: "Step-by-step guide to claim your labor gratuity at the end of your contract.",
+      href: "/how-to-claim-gratuity-uae"
     },
     {
-      icon: <FileText size={24} />,
-      title: "How to Claim Your Gratuity",
-      description: "Step-by-step guide to claim your labor gratuity at the end of your contract.",
-      href: "/how-to-claim-gratuity"
+      icon: <Clock size={24} />,
+      title: "Receiving Your Gratuity",
+      description: "Learn about the timeline and factors affecting when you'll receive your gratuity payment.",
+      href: "/how-long-to-receive-gratuity-uae"
     },
     {
       icon: <Scale size={24} />,
       title: "Gratuity Disputes",
       description: "What to do when your employer doesn't pay the gratuity correctly.",
-      href: "/gratuity-dispute-resolution"
+      href: "/how-to-claim-gratuity-uae"
     },
     {
       icon: <DollarSign size={24} />,
       title: "Is Gratuity Taxable?",
       description: "Information about taxation of gratuities in the UAE.",
-      href: "/is-gratuity-taxable-uae"
-    },
-    {
-      icon: <HelpCircle size={24} />,
-      title: "Frequently Asked Questions",
-      description: "Answers to the most common questions about gratuities in the UAE.",
-      href: "/gratuity-faqs"
+      href: "/is-gratuity-taxable-in-uae"
     }
   ];
 
