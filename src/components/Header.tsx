@@ -140,11 +140,6 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/gratuity-calculation-uae-guide" className="text-sm font-medium text-gray-600 hover:text-gratuity-700 transition-colors py-2">
-                  Gratuity Calculator Guide
-                </Link>
-              </li>
-              <li>
                 <NavDropdown 
                   title={t('gratuity_laws')}
                   items={navItems.laws.items}
@@ -184,16 +179,6 @@ const Header = () => {
                   toggleDropdown={() => toggleDropdown('managing')}
                 />
               </li>
-              <li>
-                <Link to="/gratuity-faqs" className="text-sm font-medium text-gray-600 hover:text-gratuity-700 transition-colors py-2">
-                  FAQs
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-sm font-medium text-gray-600 hover:text-gratuity-700 transition-colors py-2">
-                  Contact
-                </Link>
-              </li>
             </ul>
             
             <div className="ml-5 flex items-center">
@@ -232,13 +217,6 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('home')}
-              </Link>
-              <Link 
-                to="/gratuity-calculation-uae-guide" 
-                className="block px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Gratuity Calculator Guide
               </Link>
             </div>
             
@@ -325,23 +303,6 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-            </div>
-            
-            <div className="py-1">
-              <Link 
-                to="/gratuity-faqs" 
-                className="block px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                FAQs
-              </Link>
-              <Link 
-                to="/contact" 
-                className="block px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
             </div>
           </div>
         </div>
