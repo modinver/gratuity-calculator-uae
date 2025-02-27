@@ -33,11 +33,28 @@ const Index = () => {
         <Header />
         <main className="flex-grow">
           <Hero />
-          <GratuityCalculator />
-          <FeatureCards />
-          <Testimonials />
-          <FaqSection />
-          <CtaSection />
+          
+          <div className="py-12 md:py-16">
+            <GratuityCalculator />
+          </div>
+          
+          <div className="py-10 md:py-16 bg-gray-50">
+            <FeatureCards />
+          </div>
+          
+          <div className="py-12 md:py-20">
+            <Testimonials />
+          </div>
+          
+          <div className="py-10 md:py-16 bg-gray-50">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+              <FaqSection />
+            </div>
+          </div>
+          
+          <div className="py-12 md:py-16">
+            <CtaSection />
+          </div>
         </main>
         <Footer />
       </div>

@@ -144,39 +144,37 @@ const FaqSection = () => {
   ];
 
   return (
-    <section className="bg-white py-12 sm:py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Find answers to the most common questions about gratuity in the UAE
-          </p>
-        </div>
-        
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-          <div className="divide-y divide-gray-200">
-            {faqs.map((faq, index) => (
-              <FaqItem
-                key={index}
-                question={faq.question}
-                answer={faq.answer}
-                isOpen={openIndex === index}
-                toggleOpen={() => toggleFaq(index)}
-              />
-            ))}
-          </div>
-        </div>
-        
-        <div className="mt-8 text-center">
-          <Link 
-            to="/gratuity-faqs"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gratuity-600 hover:bg-gratuity-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gratuity-500 transition-colors"
-          >
-            See all FAQs
-          </Link>
+    <div className="w-full">
+      <div className="text-center mb-10">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+        <p className="mt-4 text-lg text-gray-600">
+          Find answers to the most common questions about gratuity in the UAE
+        </p>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+        <div className="divide-y divide-gray-200">
+          {faqs.map((faq, index) => (
+            <FaqItem
+              key={index}
+              question={faq.question}
+              answer={faq.answer}
+              isOpen={openIndex === index}
+              toggleOpen={() => toggleFaq(index)}
+            />
+          ))}
         </div>
       </div>
-    </section>
+      
+      <div className="mt-8 text-center">
+        <Link 
+          to="/gratuity-faqs"
+          className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gratuity-600 hover:bg-gratuity-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gratuity-500 transition-colors"
+        >
+          See all FAQs
+        </Link>
+      </div>
+    </div>
   );
 };
 
