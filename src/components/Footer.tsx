@@ -10,9 +10,6 @@ const Footer = () => {
   
   return (
     <footer className="bg-[#1A1F2C] text-gray-200">
-      {/* Decorative Wave Pattern */}
-      <div className="h-8 w-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDEyMCI+PHBhdGggZmlsbD0iIzM4YmRmOCIgZmlsbC1vcGFjaXR5PSIwLjEiIGQ9Ik0wLDAsUzYwMCwxMjAsNjAwLDYwLFMxMjAwLDAsMTIwMCwwIj48L3BhdGg+PC9zdmc+')]"></div>
-      
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div className="space-y-6">
