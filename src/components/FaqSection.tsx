@@ -43,99 +43,99 @@ const FaqSection = () => {
 
   const faqs = [
     {
-      question: "¿Quién es elegible para recibir gratuity en UAE?",
+      question: "Who is eligible for gratuity in UAE?",
       answer: (
         <>
           <p>
-            Para ser elegible para la gratificación en UAE, debes:
+            To be eligible for gratuity in UAE, you must:
           </p>
           <ul className="list-disc pl-5 mt-2 space-y-1">
-            <li>Haber completado al menos 1 año de servicio continuo</li>
-            <li>Estar trabajando bajo un contrato laboral válido</li>
-            <li>No haber sido despedido por alguna de las razones especificadas en el Artículo 120 de la Ley Laboral</li>
+            <li>Have completed at least 1 year of continuous service</li>
+            <li>Be working under a valid employment contract</li>
+            <li>Not have been dismissed for any of the reasons specified in Article 120 of the Labor Law</li>
           </ul>
           <p className="mt-2">
             <Link to="/gratuity-eligibility" className="text-gratuity-700 hover:text-gratuity-800">
-              Más detalles sobre elegibilidad →
+              More details about eligibility →
             </Link>
           </p>
         </>
       )
     },
     {
-      question: "¿Cómo se calcula el gratuity para contratos ilimitados?",
+      question: "How is gratuity calculated for unlimited contracts?",
       answer: (
         <>
           <p>
-            Para contratos ilimitados, el cálculo depende de si renuncias o eres despedido:
+            For unlimited contracts, the calculation depends on whether you resign or are dismissed:
           </p>
           <ul className="list-disc pl-5 mt-2 space-y-1">
-            <li><strong>Renuncia voluntaria:</strong>
+            <li><strong>Voluntary resignation:</strong>
               <ul className="list-circle pl-5 mt-1">
-                <li>1-3 años: 7 días de salario por año</li>
-                <li>3-5 años: 14 días de salario por año</li>
-                <li>Más de 5 años: 21 días por los primeros 5 años + 30 días por cada año adicional</li>
+                <li>1-3 years: 7 days of salary per year</li>
+                <li>3-5 years: 14 days of salary per year</li>
+                <li>More than 5 years: 21 days for the first 5 years + 30 days for each additional year</li>
               </ul>
             </li>
-            <li className="mt-1"><strong>Despido:</strong> 21 días por cada año de los primeros 5 años + 30 días por cada año adicional</li>
+            <li className="mt-1"><strong>Dismissal:</strong> 21 days for each year of the first 5 years + 30 days for each additional year</li>
           </ul>
           <p className="mt-2">
             <Link to="/gratuity-calculation-uae" className="text-gratuity-700 hover:text-gratuity-800">
-              Ver ejemplo de cálculo detallado →
+              See detailed calculation example →
             </Link>
           </p>
         </>
       )
     },
     {
-      question: "¿Es el gratuity sujeto a impuestos en UAE?",
+      question: "Is gratuity subject to tax in UAE?",
       answer: (
         <>
           <p>
-            No, el gratuity no está sujeto a impuestos en Emiratos Árabes Unidos, ya que el país no tiene un sistema de impuesto sobre la renta para personas físicas. Sin embargo, si eres expatriado y tu país de origen grava los ingresos globales, es posible que debas declarar este ingreso en tu país de residencia fiscal.
+            No, gratuity is not subject to tax in the United Arab Emirates, as the country does not have an income tax system for individuals. However, if you are an expatriate and your country of origin taxes global income, you may need to declare this income in your country of fiscal residence.
           </p>
           <p className="mt-2">
             <Link to="/is-gratuity-taxable-uae" className="text-gratuity-700 hover:text-gratuity-800">
-              Más información sobre impuestos y gratuity →
+              More information about taxes and gratuity →
             </Link>
           </p>
         </>
       )
     },
     {
-      question: "¿Qué debo hacer si mi empleador se niega a pagar mi gratuity?",
+      question: "What should I do if my employer refuses to pay my gratuity?",
       answer: (
         <>
           <p>
-            Si tu empleador se niega a pagar tu gratuity, puedes seguir estos pasos:
+            If your employer refuses to pay your gratuity, you can follow these steps:
           </p>
           <ol className="list-decimal pl-5 mt-2 space-y-1">
-            <li>Presenta una reclamación formal ante el Ministerio de Recursos Humanos y Emiratización (MOHRE)</li>
-            <li>Si no se resuelve, el caso se transferirá a los tribunales laborales</li>
-            <li>Considera consultar con un abogado especializado en derecho laboral</li>
+            <li>File a formal complaint with the Ministry of Human Resources and Emiratisation (MOHRE)</li>
+            <li>If not resolved, the case will be transferred to labor courts</li>
+            <li>Consider consulting with a specialized labor lawyer</li>
           </ol>
           <p className="mt-2">
             <Link to="/unpaid-gratuity-uae" className="text-gratuity-700 hover:text-gratuity-800">
-              Guía completa sobre reclamaciones →
+              Complete guide on claims →
             </Link>
           </p>
         </>
       )
     },
     {
-      question: "¿Cuál es la diferencia entre contratos limitados e ilimitados?",
+      question: "What is the difference between limited and unlimited contracts?",
       answer: (
         <>
           <p>
-            Las principales diferencias son:
+            The main differences are:
           </p>
           <ul className="list-disc pl-5 mt-2 space-y-2">
-            <li><strong>Contrato limitado:</strong> Tiene una fecha de finalización específica. La gratificación se paga completamente independientemente de quién termine el contrato.</li>
-            <li><strong>Contrato ilimitado:</strong> No tiene fecha de finalización. La gratificación puede reducirse si el empleado renuncia antes de completar 5 años.</li>
+            <li><strong>Limited contract:</strong> Has a specific end date. Gratuity is paid in full regardless of who terminates the contract.</li>
+            <li><strong>Unlimited contract:</strong> Has no end date. Gratuity may be reduced if the employee resigns before completing 5 years.</li>
           </ul>
           <p className="mt-2">
             <Link to="/limited-vs-unlimited-contracts" className="text-gratuity-700 hover:text-gratuity-800">
-              Comparación detallada de contratos →
+              Detailed contract comparison →
             </Link>
           </p>
         </>
@@ -162,7 +162,7 @@ const FaqSection = () => {
           to="/gratuity-faqs"
           className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gratuity-600 hover:bg-gratuity-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gratuity-500 transition-colors"
         >
-          Ver todas las preguntas frecuentes
+          See all FAQs
         </Link>
       </div>
     </div>
