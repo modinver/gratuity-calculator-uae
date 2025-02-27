@@ -53,21 +53,15 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-[#38bdf8] border-b-2 border-[#38bdf8] pb-2 inline-block mb-6">About Us</h3>
             <ul className="space-y-4">
               <li>
-                <Link to="/about-us" className="text-gray-300 hover:text-[#38bdf8] transition-colors flex items-center">
+                <Link to="/blog" className="text-gray-300 hover:text-[#38bdf8] transition-colors flex items-center">
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#38bdf8] mr-2"></span>
-                  Our Mission
+                  Blog
                 </Link>
               </li>
               <li>
                 <Link to="/our-team" className="text-gray-300 hover:text-[#38bdf8] transition-colors flex items-center">
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#38bdf8] mr-2"></span>
                   Our Team
-                </Link>
-              </li>
-              <li>
-                <Link to="/testimonials" className="text-gray-300 hover:text-[#38bdf8] transition-colors flex items-center">
-                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#38bdf8] mr-2"></span>
-                  Testimonials
                 </Link>
               </li>
               <li>
