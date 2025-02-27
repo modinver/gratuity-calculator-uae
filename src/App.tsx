@@ -30,15 +30,25 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/gratuity-calculation-uae-guide" element={<GratuityCalculationGuide />} />
+            <Route path="/gratuity-calculation-uae-guide/" element={<GratuityCalculationGuide />} />
             <Route path="/gratuity-law-uae-guide" element={<GratuityLawUAEGuide />} />
+            <Route path="/gratuity-law-uae-guide/" element={<GratuityLawUAEGuide />} />
             <Route path="/who-is-eligible-for-gratuity-uae" element={<GratuityEligibilityUAE />} />
+            <Route path="/who-is-eligible-for-gratuity-uae/" element={<GratuityEligibilityUAE />} />
             <Route path="/how-to-claim-gratuity-uae" element={<GratuityClaim />} />
+            <Route path="/how-to-claim-gratuity-uae/" element={<GratuityClaim />} />
             <Route path="/best-way-invest-gratuity-uae" element={<InvestGratuityUAE />} />
+            <Route path="/best-way-invest-gratuity-uae/" element={<InvestGratuityUAE />} />
             <Route path="/is-gratuity-taxable-in-uae" element={<GratuityTaxUAE />} />
+            <Route path="/is-gratuity-taxable-in-uae/" element={<GratuityTaxUAE />} />
             <Route path="/does-resignation-affect-gratuity-uae" element={<ResignationAffectGratuityUAE />} />
+            <Route path="/does-resignation-affect-gratuity-uae/" element={<ResignationAffectGratuityUAE />} />
             <Route path="/how-long-to-receive-gratuity-uae" element={<TimeToReceiveGratuityUAE />} />
+            <Route path="/how-long-to-receive-gratuity-uae/" element={<TimeToReceiveGratuityUAE />} />
             <Route path="/gratuity-limited-contract-uae" element={<GratuityLimitedContractUAE />} />
+            <Route path="/gratuity-limited-contract-uae/" element={<GratuityLimitedContractUAE />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/contact/" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
