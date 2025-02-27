@@ -3,7 +3,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Search } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import LanguageSwitcher from './LanguageSwitcher';
 import Logo from './Logo';
 
 interface DropdownProps {
@@ -160,19 +159,13 @@ const Header = () => {
                 />
               </li>
             </ul>
-            
-            <div className="ml-5 flex items-center">
-              <LanguageSwitcher />
-            </div>
           </nav>
           
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <LanguageSwitcher />
-            
             <button 
               onClick={toggleMenu}
-              className="ml-2 inline-flex items-center justify-center p-1.5 rounded-md text-gray-700 hover:text-gratuity-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gratuity-500"
+              className="inline-flex items-center justify-center p-1.5 rounded-md text-gray-700 hover:text-gratuity-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gratuity-500"
               aria-expanded={isMenuOpen}
             >
               <span className="sr-only">Open main menu</span>
