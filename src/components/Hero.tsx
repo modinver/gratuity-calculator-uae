@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calculator, Book, CheckCircle, Shield, Award } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import heroImage from '@/assets/hero-image.svg';
 
 const Hero = () => {
   const { t, language } = useLanguage();
@@ -66,9 +65,9 @@ const Hero = () => {
           {/* Hero Image */}
           <div className="flex justify-center">
             <img 
-              src={heroImage} 
+              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80" 
               alt="UAE Gratuity Calculator" 
-              className="w-full max-w-lg object-contain"
+              className="w-full max-w-lg object-contain rounded-lg shadow-md"
             />
           </div>
         </div>
