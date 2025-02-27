@@ -38,19 +38,19 @@ const Testimonials = () => {
   const testimonials = [
     {
       content: "This calculator helped me understand exactly how much gratuity I was entitled to. When my employer offered me less, I was able to confidently negotiate by showing the correct calculations.",
-      author: "Alejandro R.",
+      author: "James T.",
       role: "Engineer, 6 years in Dubai",
       image: "/placeholder.svg"
     },
     {
       content: "After using this tool, I discovered my gratuity should be almost 30% higher than what my company had initially calculated. It's been a significant saving!",
-      author: "Maria L.",
+      author: "Sarah M.",
       role: "Accountant, 4 years in Abu Dhabi",
       image: "/placeholder.svg"
     },
     {
       content: "The information about limited and unlimited contracts helped me make the right decision when signing my new contract. It has definitely given me a financial advantage.",
-      author: "Javier M.",
+      author: "Mohammed A.",
       role: "Marketing Executive, UAE",
       image: "/placeholder.svg"
     }
@@ -60,10 +60,10 @@ const Testimonials = () => {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-gray-900">
-          What Our Users Say
+          Stories from Grateful Gratuity Recipients
         </h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-          Real stories from professionals who have benefited from our gratuity calculator
+        <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          Thousands of expatriates and residents in the United Arab Emirates trust our calculator to plan their financial future.
         </p>
       </div>
       
