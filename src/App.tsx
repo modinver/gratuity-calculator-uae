@@ -13,6 +13,7 @@ import GratuityEligibilityUAE from "./pages/GratuityEligibilityUAE";
 import GratuityClaim from "./pages/GratuityClaim";
 import InvestGratuityUAE from "./pages/InvestGratuityUAE";
 import GratuityTaxUAE from "./pages/GratuityTaxUAE";
+import ResignationAffectGratuityUAE from "./pages/ResignationAffectGratuityUAE";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="/how-to-claim-gratuity-uae" element={<GratuityClaim />} />
             <Route path="/best-way-invest-gratuity-uae" element={<InvestGratuityUAE />} />
             <Route path="/is-gratuity-taxable-in-uae" element={<GratuityTaxUAE />} />
+            <Route path="/does-resignation-affect-gratuity-uae" element={<ResignationAffectGratuityUAE />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
