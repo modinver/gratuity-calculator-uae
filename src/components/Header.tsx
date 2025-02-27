@@ -47,7 +47,7 @@ const NavDropdown: React.FC<DropdownProps> = ({ title, items, isOpen, toggleDrop
       </button>
       
       {isOpen && (
-        <div className="absolute z-50 left-0 mt-0 w-56 bg-white rounded-md shadow-lg py-1 animate-fade-in border border-gray-100">
+        <div className={`absolute z-50 ${language === 'ar' ? 'right-0' : 'left-0'} mt-0 w-56 bg-white rounded-md shadow-lg py-1 animate-fade-in border border-gray-100`}>
           {items.map((item, index) => (
             <Link 
               key={index}

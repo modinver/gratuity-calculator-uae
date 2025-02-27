@@ -1,7 +1,7 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-export type Language = 'en';
+export type Language = 'en' | 'ar';
 
 interface LanguageContextType {
   language: Language;
@@ -161,29 +161,184 @@ const translations: Record<Language, Record<string, string>> = {
     "gratuity_calculator": "Gratuity Calculator",
     "uae_law": "UAE Gratuity Law",
     "how_calculate": "How to Calculate Gratuity"
+  },
+  ar: {
+    // Header
+    "home": "الرئيسية",
+    "gratuity_laws": "قوانين مكافأة نهاية الخدمة",
+    "calculation": "حساب المكافأة",
+    "claims_disputes": "المطالبات والنزاعات",
+    "tax_deductions": "الضرائب والخصومات",
+    "managing_gratuity": "إدارة المكافأة",
+    "faqs": "الأسئلة الشائعة",
+    "contact": "اتصل بنا",
+    
+    // Hero
+    "free_calculator": "حاسبة مجانية",
+    "hero_title": "احسب مكافأة نهاية الخدمة فوراً وافهم قوانين الإمارات",
+    "hero_subtitle": "حدد بسهولة مكافأة نهاية خدمتك واحصل على رؤى الخبراء حول قواعد المكافآت في الإمارات.",
+    "use_calculator": "استخدم الحاسبة",
+    "learn_law": "تعرف على قانون الإمارات",
+    "precise_calculation": "حساب دقيق",
+    "compliant_law": "متوافق 100% مع قانون العمل",
+    "updated_regulations": "محدث بأحدث اللوائح لعام 2024",
+    "verified_experts": "مُصدق من قبل الخبراء",
+    "legal_consultants": "مستشارين قانونيين متخصصين",
+    
+    // Calculator Section
+    "precise_calc": "حساب دقيق",
+    "calculator_title": "حاسبة مكافأة نهاية الخدمة الإماراتية",
+    "calculator_subtitle": "تستخدم حاسبتنا الصيغ الرسمية وفقًا لقانون العمل الإماراتي 2024 لحساب مكافأتك بدقة.",
+    "contract_type": "نوع العقد",
+    "limited": "محدد المدة",
+    "unlimited": "غير محدد المدة",
+    "termination_reason": "سبب إنهاء الخدمة",
+    "resignation": "استقالة طوعية",
+    "termination": "فصل / إنهاء من قبل صاحب العمل",
+    "start_date": "تاريخ بدء العمل",
+    "end_date": "تاريخ انتهاء العمل",
+    "basic_salary": "الراتب الأساسي الشهري (درهم)",
+    "unpaid_days": "أيام غير مدفوعة (إن وجدت)",
+    "calculate": "حساب المكافأة",
+    "calculation_result": "نتيجة الحساب",
+    "estimated_gratuity": "مكافأتك المقدرة",
+    "years_of_service": "سنوات الخدمة",
+    "basic_salary_result": "الراتب الأساسي",
+    "daily_wage": "الأجر اليومي",
+    "deductions": "الخصومات (أيام غير مدفوعة)",
+    "calculation_breakdown": "تفصيل الحساب",
+    "base_gratuity": "المكافأة الأساسية:",
+    "additional_gratuity": "المكافأة الإضافية:",
+    "deductions_unpaid": "الخصومات (أيام غير مدفوعة):",
+    "total": "المجموع:",
+    "note": "ملاحظة:",
+    "calculation_disclaimer": "هذا الحساب هو تقدير استنادًا إلى قانون العمل الإماراتي. قد تختلف النتائج حسب الظروف الخاصة. استشر مستشارًا قانونيًا للحصول على معلومات دقيقة حول حالتك الخاصة.",
+
+    // Why Gratuity Matters Section
+    "why_important": "لماذا فهم مكافأة نهاية الخدمة مهم؟",
+    "understand_rights": "مكافأة نهاية الخدمة هي حق لك. معرفة كيفية حسابها يضمن حصولك على ما تستحقه.",
+    "maximize_payment": "تعظيم مدفوعاتك",
+    "maximize_description": "تعلم استراتيجيات للحصول على أعلى مكافأة ممكنة بناءً على وضعك الوظيفي.",
+    "avoid_legal": "تجنب المشاكل القانونية",
+    "avoid_description": "افهم حقوقك بموجب قوانين العمل الإماراتية وتجنب النزاعات غير الضرورية.",
+    "plan_future": "خطط لمستقبلك",
+    "plan_description": "تعلم أفضل الطرق لاستثمار وإدارة مكافأتك لتأمين مستقبلك المالي.",
+
+    // Feature Cards Section
+    "everything_need": "كل ما تحتاج لمعرفته عن مكافأة نهاية الخدمة في الإمارات",
+    "explore_guide": "استكشف دليلنا الشامل حول مكافآت نهاية الخدمة في الإمارات العربية المتحدة",
+    "law_title": "قانون مكافأة نهاية الخدمة الإماراتي",
+    "law_description": "اكتشف كل شيء عن قانون العمل الذي ينظم مكافآت نهاية الخدمة في الإمارات العربية المتحدة.",
+    "contracts_title": "العقود المحددة مقابل غير المحددة",
+    "contracts_description": "اكتشف الاختلافات وكيف تؤثر على مكافأتك النهائية.",
+    "eligibility_title": "الأهلية للحصول على المكافأة",
+    "eligibility_description": "تعرف على متطلبات الأهلية للحصول على مكافأة نهاية الخدمة في الإمارات.",
+    "calculate_title": "كيفية حساب المكافأة",
+    "calculate_description": "تعلم الصيغة الدقيقة وكيفية حساب مكافأتك خطوة بخطوة.",
+    "factors_title": "العوامل المؤثرة على المكافأة",
+    "factors_description": "اكتشف العوامل التي يمكن أن تزيد أو تقلل من مدفوعاتك النهائية.",
+    "terminated_title": "مكافأة الموظفين المفصولين",
+    "terminated_description": "اعرف حقوقك في حالة الفصل وكيفية حساب مكافأتك.",
+    "claim_title": "كيفية المطالبة بمكافأتك",
+    "claim_description": "دليل خطوة بخطوة للمطالبة بمكافأة نهاية خدمتك عند انتهاء عقدك.",
+    "disputes_title": "نزاعات المكافأة",
+    "disputes_description": "ماذا تفعل عندما لا يدفع صاحب العمل المكافأة بشكل صحيح.",
+    "taxable_title": "هل المكافأة خاضعة للضريبة؟",
+    "taxable_description": "معلومات حول الضرائب على مكافآت نهاية الخدمة في الإمارات.",
+    "faq_title": "الأسئلة المتكررة",
+    "faq_description": "إجابات على الأسئلة الأكثر شيوعًا حول مكافآت نهاية الخدمة في الإمارات.",
+    "read_more": "اقرأ المزيد",
+
+    // Testimonials Section
+    "valued_professionals": "يقدرها المحترفون في الإمارات",
+    "thousands_trust": "آلاف المغتربين والمقيمين في الإمارات العربية المتحدة يثقون بحاسبتنا لتخطيط مستقبلهم المالي.",
+
+    // FAQ Section
+    "common_questions": "أسئلة شائعة حول مكافأة نهاية الخدمة",
+    "answers_common": "إجابات على الشكوك الأكثر شيوعًا حول مكافآت نهاية الخدمة في الإمارات",
+    "who_eligible": "من المؤهل للحصول على مكافأة نهاية الخدمة في الإمارات؟",
+    "eligible_answer_1": "لتكون مؤهلاً للحصول على مكافأة نهاية الخدمة في الإمارات، يجب عليك:",
+    "completed_year": "إكمال سنة واحدة على الأقل من الخدمة المتواصلة",
+    "valid_contract": "العمل بموجب عقد عمل ساري المفعول",
+    "not_dismissed": "عدم الفصل لأي من الأسباب المحددة في المادة 120 من قانون العمل",
+    "more_eligibility": "المزيد من التفاصيل حول الأهلية ←",
+    "unlimited_calculation": "كيف يتم حساب مكافأة نهاية الخدمة للعقود غير المحددة؟",
+    "unlimited_answer": "بالنسبة للعقود غير المحددة، يعتمد الحساب على ما إذا كنت تستقيل أو يتم فصلك:",
+    "voluntary_resignation": "الاستقالة الطوعية:",
+    "years_1_3": "1-3 سنوات: 7 أيام راتب عن كل سنة",
+    "years_3_5": "3-5 سنوات: 14 يوم راتب عن كل سنة",
+    "years_more_5": "أكثر من 5 سنوات: 21 يوم للسنوات الخمس الأولى + 30 يوم لكل سنة إضافية",
+    "dismissal": "الفصل:",
+    "detailed_calculation": "انظر مثال حساب مفصل ←",
+    "taxable_question": "هل مكافأة نهاية الخدمة خاضعة للضريبة في الإمارات؟",
+    "taxable_answer": "لا، مكافأة نهاية الخدمة ليست خاضعة للضريبة في الإمارات العربية المتحدة، حيث لا يوجد في البلاد نظام ضريبة دخل للأفراد. ومع ذلك، إذا كنت مغتربًا وكان بلدك الأصلي يفرض ضرائب على الدخل العالمي، فقد تحتاج إلى إعلان هذا الدخل في بلد إقامتك الضريبية.",
+    "more_tax_info": "مزيد من المعلومات حول الضرائب ومكافأة نهاية الخدمة ←",
+    "employer_refuses": "ماذا أفعل إذا رفض صاحب العمل دفع مكافأة نهاية الخدمة الخاصة بي؟",
+    "refusal_steps": "إذا رفض صاحب العمل دفع مكافأة نهاية الخدمة الخاصة بك، يمكنك اتباع هذه الخطوات:",
+    "formal_claim": "تقديم شكوى رسمية إلى وزارة الموارد البشرية والتوطين (MOHRE)",
+    "not_resolved": "إذا لم يتم حلها، سيتم تحويل القضية إلى محاكم العمل",
+    "consider_lawyer": "فكر في استشارة محامٍ متخصص في قانون العمل",
+    "complete_guide": "دليل كامل حول المطالبات ←",
+    "contract_difference": "ما الفرق بين العقود المحددة وغير المحددة؟",
+    "main_differences": "الاختلافات الرئيسية هي:",
+    "limited_contract": "العقد المحدد:",
+    "limited_description": "له تاريخ انتهاء محدد. يتم دفع مكافأة نهاية الخدمة بالكامل بغض النظر عمن ينهي العقد.",
+    "unlimited_contract": "العقد غير المحدد:",
+    "unlimited_description": "ليس له تاريخ انتهاء. قد يتم تخفيض المكافأة إذا استقال الموظف قبل إكمال 5 سنوات.",
+    "detailed_comparison": "مقارنة مفصلة للعقود ←",
+    "see_all_faqs": "مشاهدة جميع الأسئلة الشائعة",
+
+    // CTA Section
+    "dont_wait": "لا تنتظر أكثر",
+    "take_control": "تحكم بمكافأة نهاية خدمتك اليوم",
+    "calculate_learn": "احسب مكافأة نهاية خدمتك وتعلم كل ما تحتاج لمعرفته حول حقوقك في الإمارات.",
+    "use_calculator_cta": "استخدم الحاسبة",
+    "learn_more_gratuity": "تعلم المزيد عن مكافأة نهاية الخدمة",
+
+    // Footer
+    "calculator_guide": "حاسبة ودليل شامل حول مكافأة نهاية الخدمة في الإمارات العربية المتحدة",
+    "laws_rules": "القوانين والقواعد",
+    "calculation_footer": "الحساب",
+    "quick_links": "روابط سريعة",
+    "rights_reserved": "جميع الحقوق محفوظة.",
+
+    // NotFound page
+    "page_not_found": "الصفحة غير موجودة",
+    "sorry_message": "عذراً، لم نتمكن من العثور على الصفحة التي تبحث عنها.",
+    "back_home": "العودة إلى الصفحة الرئيسية",
+    "popular_pages": "الصفحات الشائعة",
+    "gratuity_calculator": "حاسبة مكافأة نهاية الخدمة",
+    "uae_law": "قانون مكافأة نهاية الخدمة الإماراتي",
+    "how_calculate": "كيفية حساب مكافأة نهاية الخدمة"
   }
 };
 
 export const LanguageProvider: React.FC<{children: ReactNode}> = ({ children }) => {
-  // Always use English as the default and only language
-  const [language] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>('en');
   
   useEffect(() => {
-    // Set dir attribute on document.body based on language (always LTR for English)
-    document.documentElement.dir = 'ltr';
+    // Set dir attribute on document.body based on language
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     
-    // Store the language preference (always English)
+    // You might also want to store the language preference
     localStorage.setItem('language', language);
   }, [language]);
   
-  // Dummy setLanguage function that doesn't actually change the language
-  const setLanguage = () => {
-    // No-op since we only support English now
+  // Initialize language from localStorage if available
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language') as Language;
+    if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'ar')) {
+      setLanguageState(savedLanguage);
+    }
+  }, []);
+  
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
   };
   
-  // Translation function (always uses English)
+  // Translation function
   const t = (key: string): string => {
-    return translations.en[key] || key;
+    return translations[language][key] || key;
   };
   
   return (
