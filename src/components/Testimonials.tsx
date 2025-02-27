@@ -13,7 +13,7 @@ interface TestimonialProps {
 
 const Testimonial: React.FC<TestimonialProps> = ({ content, author, role, image, rating, date }) => {
   return (
-    <div className="flex flex-col bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+    <div className="flex flex-col bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow h-full">
       <div className="flex items-center mb-4">
         <img 
           className="h-10 w-10 rounded-full object-cover mr-4" 
@@ -41,9 +41,19 @@ const Testimonial: React.FC<TestimonialProps> = ({ content, author, role, image,
         <span className="ml-2 text-sm text-gray-500">{date}</span>
       </div>
       
-      <p className="text-gray-600 text-sm leading-relaxed">
+      <p className="text-gray-600 text-sm leading-relaxed flex-grow mb-4">
         {content}
       </p>
+      
+      <div className="mt-auto flex items-center">
+        <svg viewBox="0 0 24 24" width="20" height="20" className="mr-1">
+          <path 
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L12 14.17l-4.59-4.59L6 11l6 6 6-6-1.41-1.42z" 
+            fill="#4285F4"
+          />
+        </svg>
+        <span className="text-xs font-medium text-[#4285F4]">Posted on Google Business</span>
+      </div>
     </div>
   );
 };
@@ -108,13 +118,26 @@ const Testimonials = () => {
               Based on 200+ reviews
             </p>
           </div>
+          <div className="mt-2 flex items-center justify-center">
+            <svg viewBox="0 0 24 24" width="24" height="24" className="mr-1">
+              <path 
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" 
+                fill="#4285F4"
+              />
+              <path 
+                d="M10 9.5l5 3-5 3V9.5z" 
+                fill="#4285F4"
+              />
+            </svg>
+            <span className="text-sm font-medium text-[#4285F4]">Google Business Reviews</span>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="animate-fade-in"
+              className="animate-fade-in h-full"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <Testimonial {...testimonial} />
