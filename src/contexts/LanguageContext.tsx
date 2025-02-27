@@ -16,8 +16,11 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     // Header
     "home": "Home",
-    "gratuity_laws": "Gratuity Laws",
-    "calculation": "Calculation",
+    "gratuity_laws": "Gratuity Laws & Rules",
+    "calculation": "Gratuity Calculation",
+    "claims_disputes": "Claims & Disputes",
+    "tax_deductions": "Tax & Deductions", 
+    "managing_gratuity": "Managing Gratuity",
     "faqs": "FAQs",
     "contact": "Contact",
     
@@ -163,7 +166,10 @@ const translations: Record<Language, Record<string, string>> = {
     // Header
     "home": "الرئيسية",
     "gratuity_laws": "قوانين مكافأة نهاية الخدمة",
-    "calculation": "الحساب",
+    "calculation": "حساب المكافأة",
+    "claims_disputes": "المطالبات والنزاعات",
+    "tax_deductions": "الضرائب والخصومات",
+    "managing_gratuity": "إدارة المكافأة",
     "faqs": "الأسئلة الشائعة",
     "contact": "اتصل بنا",
     
