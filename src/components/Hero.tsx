@@ -65,7 +65,7 @@ const Hero = () => {
           {/* Hero Image */}
           <div className="flex justify-center">
             <img 
-              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80" 
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80" 
               alt="UAE Gratuity Calculator" 
               className="w-full max-w-lg object-contain rounded-lg shadow-md"
             />
