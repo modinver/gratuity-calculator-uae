@@ -176,11 +176,6 @@ const Header = () => {
                   toggleDropdown={() => toggleDropdown('managing')}
                 />
               </li>
-              <li>
-                <Link to="/contact" className="text-sm font-medium text-gray-600 hover:text-gratuity-700 transition-colors py-2">
-                  {t('contact')}
-                </Link>
-              </li>
             </ul>
             
             <div className="ml-5 flex items-center">
@@ -305,17 +300,6 @@ const Header = () => {
                   {item.label}
                 </Link>
               ))}
-            </div>
-            
-            {/* Contact */}
-            <div className="py-1">
-              <Link 
-                to="/contact" 
-                className="block px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {t('contact')}
-              </Link>
             </div>
           </div>
         </div>
