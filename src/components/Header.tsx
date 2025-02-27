@@ -2,9 +2,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -23,41 +26,45 @@ const Header = () => {
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
+          <nav className="hidden md:flex items-center space-x-8">
             <ul className="flex space-x-8">
               <li>
                 <Link to="/" className="text-gray-600 hover:text-gratuity-700 transition-colors">
-                  Inicio
+                  {t('home')}
                 </Link>
               </li>
               <li>
                 <Link to="/gratuity-law-uae" className="text-gray-600 hover:text-gratuity-700 transition-colors">
-                  Leyes de Gratuity
+                  {t('gratuity_laws')}
                 </Link>
               </li>
               <li>
                 <Link to="/gratuity-calculation-uae" className="text-gray-600 hover:text-gratuity-700 transition-colors">
-                  Cálculo
+                  {t('calculation')}
                 </Link>
               </li>
               <li>
                 <Link to="/gratuity-faqs" className="text-gray-600 hover:text-gratuity-700 transition-colors">
-                  Preguntas Frecuentes
+                  {t('faqs')}
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-gray-600 hover:text-gratuity-700 transition-colors">
-                  Contacto
+                  {t('contact')}
                 </Link>
               </li>
             </ul>
+            
+            <LanguageSwitcher />
           </nav>
           
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
+            <LanguageSwitcher />
+            
             <button 
               onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gratuity-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gratuity-500"
+              className="ml-2 inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gratuity-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gratuity-500"
             >
               <span className="sr-only">Open main menu</span>
               {isMenuOpen ? (
@@ -79,35 +86,35 @@ const Header = () => {
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              Inicio
+              {t('home')}
             </Link>
             <Link 
               to="/gratuity-law-uae" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              Leyes de Gratuity
+              {t('gratuity_laws')}
             </Link>
             <Link 
               to="/gratuity-calculation-uae" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              Cálculo
+              {t('calculation')}
             </Link>
             <Link 
               to="/gratuity-faqs" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              Preguntas Frecuentes
+              {t('faqs')}
             </Link>
             <Link 
               to="/contact" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              Contacto
+              {t('contact')}
             </Link>
           </div>
         </div>

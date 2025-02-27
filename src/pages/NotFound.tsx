@@ -1,11 +1,13 @@
 
 import React, { useEffect } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const NotFound = () => {
   const location = useLocation();
+  const { t } = useLanguage();
 
   useEffect(() => {
     console.error(
@@ -25,37 +27,37 @@ const NotFound = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Página no encontrada</h1>
+          <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">{t('page_not_found')}</h1>
           <p className="mt-3 text-base text-gray-600">
-            Lo sentimos, no pudimos encontrar la página que estás buscando.
+            {t('sorry_message')}
           </p>
           <div className="mt-8">
             <Link to="/" className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-gratuity-600 hover:bg-gratuity-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gratuity-500 transition-colors duration-150">
-              Volver a la página principal
+              {t('back_home')}
             </Link>
           </div>
           
           <div className="mt-12 border-t border-gray-200 pt-8">
-            <h2 className="text-lg font-medium text-gray-900">Páginas populares</h2>
+            <h2 className="text-lg font-medium text-gray-900">{t('popular_pages')}</h2>
             <ul className="mt-4 space-y-2">
               <li>
                 <Link to="/" className="text-gratuity-600 hover:text-gratuity-800 transition-colors">
-                  Calculadora de Gratuity
+                  {t('gratuity_calculator')}
                 </Link>
               </li>
               <li>
                 <Link to="/gratuity-law-uae" className="text-gratuity-600 hover:text-gratuity-800 transition-colors">
-                  Ley de Gratuity en UAE
+                  {t('uae_law')}
                 </Link>
               </li>
               <li>
                 <Link to="/gratuity-calculation-uae" className="text-gratuity-600 hover:text-gratuity-800 transition-colors">
-                  Cómo Calcular Gratuity
+                  {t('how_calculate')}
                 </Link>
               </li>
               <li>
                 <Link to="/gratuity-faqs" className="text-gratuity-600 hover:text-gratuity-800 transition-colors">
-                  Preguntas Frecuentes
+                  {t('faqs')}
                 </Link>
               </li>
             </ul>

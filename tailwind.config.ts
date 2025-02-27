@@ -117,8 +117,9 @@ export default {
 				}
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-				display: ['Inter', 'sans-serif']
+				sans: ['Inter', 'Cairo', 'sans-serif'],
+				display: ['Inter', 'Cairo', 'sans-serif'],
+				arabic: ['Cairo', 'sans-serif']
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',

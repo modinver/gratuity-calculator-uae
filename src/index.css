@@ -105,6 +105,23 @@
   }
 }
 
+/* RTL Support */
+html[dir="rtl"] .flip-for-rtl {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .space-x-1 > *, 
+html[dir="rtl"] .space-x-2 > *, 
+html[dir="rtl"] .space-x-3 > *, 
+html[dir="rtl"] .space-x-4 > *, 
+html[dir="rtl"] .space-x-5 > *, 
+html[dir="rtl"] .space-x-6 > *, 
+html[dir="rtl"] .space-x-7 > *, 
+html[dir="rtl"] .space-x-8 > * {
+  margin-left: var(--tw-space-x-reverse);
+  margin-right: calc(var(--tw-space-x-reverse) * -1);
+}
+
 .glass {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(4px);
@@ -186,4 +203,17 @@ input[type="number"] {
 
 .delay-500 {
   animation-delay: 500ms;
+}
+
+/* RTL specific icons and directional elements */
+html[dir="rtl"] .rtl-mirror {
+  transform: scaleX(-1);
+}
+
+html[dir="rtl"] .ltr-only {
+  display: none;
+}
+
+html[dir="ltr"] .rtl-only {
+  display: none;
 }

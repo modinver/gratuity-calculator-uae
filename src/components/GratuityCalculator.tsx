@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { differenceInYears, differenceInDays } from 'date-fns';
 import { formatCurrency } from '@/lib/utils';
 import { toast } from '@/hooks/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface CalculationResult {
   gratuity: number;
@@ -15,6 +16,8 @@ interface CalculationResult {
 }
 
 const GratuityCalculator = () => {
+  const { t, language } = useLanguage();
+  
   const [formData, setFormData] = useState({
     contractType: 'ilimitado',
     startDate: '',
@@ -40,8 +43,10 @@ const GratuityCalculator = () => {
       // Validate inputs
       if (!formData.startDate || !formData.endDate || !formData.basicSalary) {
         toast({
-          title: "Error",
-          description: "Por favor completa todos los campos requeridos",
+          title: language === 'en' ? "Error" : "خطأ",
+          description: language === 'en' 
+            ? "Please complete all required fields" 
+            : "يرجى إكمال جميع الحقول المطلوبة",
           variant: "destructive"
         });
         return;
@@ -54,8 +59,10 @@ const GratuityCalculator = () => {
 
       if (endDate <= startDate) {
         toast({
-          title: "Error",
-          description: "La fecha de finalización debe ser posterior a la fecha de inicio",
+          title: language === 'en' ? "Error" : "خطأ",
+          description: language === 'en'
+            ? "The end date must be after the start date"
+            : "يجب أن يكون تاريخ الانتهاء بعد تاريخ البدء",
           variant: "destructive"
         });
         return;
@@ -63,8 +70,10 @@ const GratuityCalculator = () => {
 
       if (basicSalary <= 0) {
         toast({
-          title: "Error",
-          description: "El salario básico debe ser mayor que cero",
+          title: language === 'en' ? "Error" : "خطأ",
+          description: language === 'en'
+            ? "Basic salary must be greater than zero"
+            : "يجب أن يكون الراتب الأساسي أكبر من صفر",
           variant: "destructive"
         });
         return;
@@ -145,8 +154,10 @@ const GratuityCalculator = () => {
     } catch (error) {
       console.error("Error calculating gratuity:", error);
       toast({
-        title: "Error",
-        description: "Ha ocurrido un error al calcular la gratificación",
+        title: language === 'en' ? "Error" : "خطأ",
+        description: language === 'en'
+          ? "An error occurred while calculating the gratuity"
+          : "حدث خطأ أثناء حساب المكافأة",
         variant: "destructive"
       });
     }
@@ -161,14 +172,14 @@ const GratuityCalculator = () => {
     <div className="w-full max-w-4xl mx-auto">
       <div className="glassmorphism p-6 sm:p-8 md:p-10">
         <h2 className="text-2xl sm:text-3xl font-semibold text-gratuity-900 mb-6 text-center">
-          Calculadora de Gratuity UAE
+          {t('calculator_title')}
         </h2>
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label htmlFor="contractType" className="block text-sm font-medium text-gray-700">
-                Tipo de Contrato
+                {t('contract_type')}
               </label>
               <select
                 id="contractType"
@@ -177,14 +188,14 @@ const GratuityCalculator = () => {
                 onChange={handleInputChange}
                 className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gratuity-500 focus:border-gratuity-500"
               >
-                <option value="limitado">Limitado</option>
-                <option value="ilimitado">Ilimitado</option>
+                <option value="limitado">{t('limited')}</option>
+                <option value="ilimitado">{t('unlimited')}</option>
               </select>
             </div>
             
             <div className="space-y-2">
               <label htmlFor="terminationReason" className="block text-sm font-medium text-gray-700">
-                Razón de Terminación
+                {t('termination_reason')}
               </label>
               <select
                 id="terminationReason"
@@ -193,14 +204,14 @@ const GratuityCalculator = () => {
                 onChange={handleInputChange}
                 className="mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-gratuity-500 focus:border-gratuity-500"
               >
-                <option value="renuncia">Renuncia Voluntaria</option>
-                <option value="despido">Despido / Terminación por Empleador</option>
+                <option value="renuncia">{t('resignation')}</option>
+                <option value="despido">{t('termination')}</option>
               </select>
             </div>
             
             <div className="space-y-2">
               <label htmlFor="startDate" className="block text-sm font-medium text-gray-700">
-                Fecha de Inicio de Empleo
+                {t('start_date')}
               </label>
               <input
                 type="date"
@@ -215,7 +226,7 @@ const GratuityCalculator = () => {
             
             <div className="space-y-2">
               <label htmlFor="endDate" className="block text-sm font-medium text-gray-700">
-                Fecha de Finalización de Empleo
+                {t('end_date')}
               </label>
               <input
                 type="date"
@@ -230,7 +241,7 @@ const GratuityCalculator = () => {
             
             <div className="space-y-2">
               <label htmlFor="basicSalary" className="block text-sm font-medium text-gray-700">
-                Salario Básico Mensual (AED)
+                {t('basic_salary')}
               </label>
               <input
                 type="number"
@@ -246,7 +257,7 @@ const GratuityCalculator = () => {
             
             <div className="space-y-2">
               <label htmlFor="unpaidDays" className="block text-sm font-medium text-gray-700">
-                Días sin Pago (Si aplica)
+                {t('unpaid_days')}
               </label>
               <input
                 type="number"
@@ -265,7 +276,7 @@ const GratuityCalculator = () => {
               type="submit"
               className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gratuity-600 hover:bg-gratuity-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gratuity-500 transition-colors"
             >
-              Calcular Gratificación
+              {t('calculate')}
             </button>
           </div>
         </form>
@@ -277,13 +288,13 @@ const GratuityCalculator = () => {
           className="mt-8 p-6 sm:p-8 md:p-10 glassmorphism animate-fade-in"
         >
           <h3 className="text-xl sm:text-2xl font-semibold text-gratuity-900 mb-6 text-center">
-            Resultado del Cálculo
+            {t('calculation_result')}
           </h3>
           
           <div className="space-y-4">
             <div className="bg-gratuity-50 p-6 rounded-lg border border-gratuity-100">
               <h4 className="text-lg font-medium text-gratuity-900 mb-2">
-                Su Gratificación Estimada
+                {t('estimated_gratuity')}
               </h4>
               <p className="text-3xl font-bold text-gratuity-800">
                 {formatCurrency(result.gratuity, 'AED')}
@@ -292,28 +303,28 @@ const GratuityCalculator = () => {
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 rounded-lg border border-gray-200">
-                <h5 className="text-sm font-medium text-gray-700 mb-1">Años de Servicio</h5>
+                <h5 className="text-sm font-medium text-gray-700 mb-1">{t('years_of_service')}</h5>
                 <p className="text-lg font-semibold text-gray-900">
-                  {result.yearsOfService.toFixed(2)} años
+                  {result.yearsOfService.toFixed(2)} {language === 'en' ? 'years' : 'سنوات'}
                 </p>
               </div>
               
               <div className="p-4 rounded-lg border border-gray-200">
-                <h5 className="text-sm font-medium text-gray-700 mb-1">Salario Básico</h5>
+                <h5 className="text-sm font-medium text-gray-700 mb-1">{t('basic_salary_result')}</h5>
                 <p className="text-lg font-semibold text-gray-900">
-                  {formatCurrency(result.basicSalary, 'AED')} / mes
+                  {formatCurrency(result.basicSalary, 'AED')} / {language === 'en' ? 'month' : 'شهر'}
                 </p>
               </div>
               
               <div className="p-4 rounded-lg border border-gray-200">
-                <h5 className="text-sm font-medium text-gray-700 mb-1">Salario Diario</h5>
+                <h5 className="text-sm font-medium text-gray-700 mb-1">{t('daily_wage')}</h5>
                 <p className="text-lg font-semibold text-gray-900">
-                  {formatCurrency(result.dailyWage, 'AED')} / día
+                  {formatCurrency(result.dailyWage, 'AED')} / {language === 'en' ? 'day' : 'يوم'}
                 </p>
               </div>
               
               <div className="p-4 rounded-lg border border-gray-200">
-                <h5 className="text-sm font-medium text-gray-700 mb-1">Deducciones (días sin pago)</h5>
+                <h5 className="text-sm font-medium text-gray-700 mb-1">{t('deductions')}</h5>
                 <p className="text-lg font-semibold text-gray-900">
                   {formatCurrency(result.deductions, 'AED')}
                 </p>
@@ -321,19 +332,19 @@ const GratuityCalculator = () => {
             </div>
             
             <div className="mt-6 pt-6 border-t border-gray-200">
-              <h4 className="text-lg font-medium text-gray-900 mb-4">Desglose del Cálculo</h4>
+              <h4 className="text-lg font-medium text-gray-900 mb-4">{t('calculation_breakdown')}</h4>
               
               <table className="min-w-full divide-y divide-gray-200">
                 <tbody className="divide-y divide-gray-200">
                   <tr>
-                    <td className="px-4 py-3 text-sm text-gray-700">Gratificación Base:</td>
+                    <td className="px-4 py-3 text-sm text-gray-700">{t('base_gratuity')}</td>
                     <td className="px-4 py-3 text-sm font-medium text-gray-900">
                       {formatCurrency(result.baseGratuity, 'AED')}
                     </td>
                   </tr>
                   {result.additionalGratuity > 0 && (
                     <tr>
-                      <td className="px-4 py-3 text-sm text-gray-700">Gratificación Adicional:</td>
+                      <td className="px-4 py-3 text-sm text-gray-700">{t('additional_gratuity')}</td>
                       <td className="px-4 py-3 text-sm font-medium text-gray-900">
                         {formatCurrency(result.additionalGratuity, 'AED')}
                       </td>
@@ -341,34 +352,4 @@ const GratuityCalculator = () => {
                   )}
                   {result.deductions > 0 && (
                     <tr>
-                      <td className="px-4 py-3 text-sm text-gray-700">Deducciones (días sin pago):</td>
-                      <td className="px-4 py-3 text-sm font-medium text-gray-900 text-red-600">
-                        -{formatCurrency(result.deductions, 'AED')}
-                      </td>
-                    </tr>
-                  )}
-                  <tr className="bg-gray-50">
-                    <td className="px-4 py-3 text-sm font-semibold text-gray-900">Total:</td>
-                    <td className="px-4 py-3 text-sm font-semibold text-gratuity-800">
-                      {formatCurrency(result.gratuity, 'AED')}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            
-            <div className="mt-6 text-sm text-gray-500">
-              <p>
-                <strong>Nota:</strong> Este cálculo es una estimación basada en la Ley Laboral de EAU. 
-                Los resultados pueden variar según circunstancias específicas. Consulte con un asesor legal 
-                para obtener información precisa sobre su caso particular.
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default GratuityCalculator;
+                      <td className="px-4 py-3 text-sm text-gray-700">{t('deductions_unpaid')}</td>

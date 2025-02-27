@@ -2,8 +2,11 @@
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
+  const { t, language } = useLanguage();
+  
   const scrollToCalculator = () => {
     const calculatorElement = document.getElementById('gratuity-calculator');
     if (calculatorElement) {
@@ -26,15 +29,15 @@ const Hero = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32 flex flex-col items-center z-10">
         <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gratuity-100 text-gratuity-800 mb-6 animate-fade-in">
-          Calculadora Gratuita
+          {t('free_calculator')}
         </span>
         
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gray-900 leading-tight tracking-tight max-w-5xl animate-slide-down">
-          Calcula tu Gratuity Instantáneamente &amp; Entiende las Leyes de Gratuity en UAE
+        <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold text-center text-gray-900 leading-tight tracking-tight max-w-5xl animate-slide-down ${language === 'ar' ? 'font-arabic' : ''}`}>
+          {t('hero_title')}
         </h1>
         
         <p className="mt-6 max-w-2xl text-center text-xl text-gray-600 animate-slide-down delay-100">
-          Determina fácilmente tu gratificación de fin de servicio y obtén información experta sobre las reglas de gratificación en Emiratos Árabes Unidos.
+          {t('hero_subtitle')}
         </p>
         
         <div className="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 animate-slide-down delay-200">
@@ -42,7 +45,7 @@ const Hero = () => {
             onClick={scrollToCalculator}
             className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gratuity-600 hover:bg-gratuity-700 shadow-sm hover:shadow transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gratuity-500"
           >
-            Usar la Calculadora
+            {t('use_calculator')}
             <ArrowDown className="ml-2 h-4 w-4" />
           </button>
           
@@ -50,7 +53,7 @@ const Hero = () => {
             to="/gratuity-law-uae"
             className="inline-flex items-center justify-center px-8 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 shadow-sm hover:shadow transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gratuity-500"
           >
-            Conocer la Ley UAE
+            {t('learn_law')}
           </Link>
         </div>
         
@@ -58,13 +61,13 @@ const Hero = () => {
           <div className="flex flex-col md:flex-row justify-between p-6 md:p-8">
             <div className="text-center md:text-left mb-6 md:mb-0">
               <h3 className="text-sm font-semibold text-gratuity-800 uppercase tracking-wide">
-                Cálculo preciso
+                {t('precise_calculation')}
               </h3>
               <p className="mt-2 text-3xl font-bold text-gray-900">
-                100% Conforme a la Ley Laboral
+                {t('compliant_law')}
               </p>
               <p className="mt-3 text-lg text-gray-600">
-                Actualizado con las últimas regulaciones de 2024
+                {t('updated_regulations')}
               </p>
             </div>
             
@@ -76,8 +79,8 @@ const Hero = () => {
                   </svg>
                 </div>
                 <div className="text-left">
-                  <p className="text-lg font-medium text-gray-900">Verificado por Expertos</p>
-                  <p className="text-gray-600">Consultores legales especializados</p>
+                  <p className="text-lg font-medium text-gray-900">{t('verified_experts')}</p>
+                  <p className="text-gray-600">{t('legal_consultants')}</p>
                 </div>
               </div>
             </div>
