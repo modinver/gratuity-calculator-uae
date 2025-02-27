@@ -1,52 +1,48 @@
 
-import React, { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { Toaster } from '@/components/ui/toaster';
-import { LanguageProvider } from '@/contexts/LanguageContext';
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
+import GratuityCalculationGuide from "./pages/GratuityCalculationGuide";
+import GratuityLawUAEGuide from "./pages/GratuityLawUAEGuide";
+import GratuityEligibilityUAE from "./pages/GratuityEligibilityUAE";
+import GratuityClaim from "./pages/GratuityClaim";
+import InvestGratuityUAE from "./pages/InvestGratuityUAE";
+import GratuityTaxUAE from "./pages/GratuityTaxUAE";
+import ResignationAffectGratuityUAE from "./pages/ResignationAffectGratuityUAE";
+import TimeToReceiveGratuityUAE from "./pages/TimeToReceiveGratuityUAE";
+import GratuityLimitedContractUAE from "./pages/GratuityLimitedContractUAE";
 
-// Pages
-import Index from '@/pages/Index';
-import GratuityLawUAEGuide from '@/pages/GratuityLawUAEGuide';
-import GratuityEligibilityUAE from '@/pages/GratuityEligibilityUAE';
-import GratuityCalculationGuide from '@/pages/GratuityCalculationGuide';
-import GratuityLimitedContractUAE from '@/pages/GratuityLimitedContractUAE';
-import ResignationAffectGratuityUAE from '@/pages/ResignationAffectGratuityUAE';
-import TimeToReceiveGratuityUAE from '@/pages/TimeToReceiveGratuityUAE';
-import GratuityTaxUAE from '@/pages/GratuityTaxUAE';
-import InvestGratuityUAE from '@/pages/InvestGratuityUAE';
-import GratuityClaim from '@/pages/GratuityClaim';
-import Contact from '@/pages/Contact';
-import NotFound from '@/pages/NotFound';
+const queryClient = new QueryClient();
 
-// CSS
-import './App.css';
-
-function App() {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
-  return (
+const App = () => (
+  <QueryClientProvider client={queryClient}>
     <LanguageProvider>
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/gratuity-law-uae-guide" element={<GratuityLawUAEGuide />} />
-        <Route path="/gratuity-eligibility-uae" element={<GratuityEligibilityUAE />} />
-        <Route path="/gratuity-calculation-guide" element={<GratuityCalculationGuide />} />
-        <Route path="/gratuity-limited-contract-uae" element={<GratuityLimitedContractUAE />} />
-        <Route path="/resignation-affect-gratuity-uae" element={<ResignationAffectGratuityUAE />} />
-        <Route path="/time-to-receive-gratuity-uae" element={<TimeToReceiveGratuityUAE />} />
-        <Route path="/gratuity-tax-uae" element={<GratuityTaxUAE />} />
-        <Route path="/invest-gratuity-uae" element={<InvestGratuityUAE />} />
-        <Route path="/gratuity-claim" element={<GratuityClaim />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Toaster />
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/gratuity-calculation-uae-guide" element={<GratuityCalculationGuide />} />
+            <Route path="/gratuity-law-uae-guide" element={<GratuityLawUAEGuide />} />
+            <Route path="/who-is-eligible-for-gratuity-uae" element={<GratuityEligibilityUAE />} />
+            <Route path="/how-to-claim-gratuity-uae" element={<GratuityClaim />} />
+            <Route path="/best-way-invest-gratuity-uae" element={<InvestGratuityUAE />} />
+            <Route path="/is-gratuity-taxable-in-uae" element={<GratuityTaxUAE />} />
+            <Route path="/does-resignation-affect-gratuity-uae" element={<ResignationAffectGratuityUAE />} />
+            <Route path="/how-long-to-receive-gratuity-uae" element={<TimeToReceiveGratuityUAE />} />
+            <Route path="/gratuity-limited-contract-uae" element={<GratuityLimitedContractUAE />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
     </LanguageProvider>
-  );
-}
+  </QueryClientProvider>
+);
 
 export default App;
