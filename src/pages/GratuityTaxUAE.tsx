@@ -196,7 +196,7 @@ const GratuityTaxUAE = () => {
   return (
     <>
       <Helmet>
-        <title>Is Gratuity Taxable in UAE? Understanding Gratuity Tax Deductions | ActuDubai</title>
+        <title>Is Gratuity Taxable in UAE? Understanding Gratuity Tax Deductions and End-of-Service Benefits</title>
         <meta 
           name="description" 
           content="Discover if gratuity is taxable in the UAE and learn about gratuity tax deductions in Dubai. This guide clarifies tax on end-of-service benefits and what you need to know!" 

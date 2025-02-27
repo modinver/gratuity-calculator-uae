@@ -201,7 +201,7 @@ const GratuityClaim = () => {
   return (
     <>
       <Helmet>
-        <title>How to Claim Gratuity in UAE - A Comprehensive Guide | ActuDubai</title>
+        <title>How to Claim Gratuity in UAE: A Comprehensive Guide</title>
         <meta 
           name="description" 
           content="Learn how to claim gratuity in the UAE with this comprehensive guide. Understand eligibility, calculation methods, legal rights, and the step-by-step process to ensure you receive your end-of-service benefits. Find solutions for disputes and legal actions if gratuity is not paid." 

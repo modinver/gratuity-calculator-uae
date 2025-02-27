@@ -209,7 +209,7 @@ const GratuityLimitedContractUAE = () => {
   return (
     <>
       <Helmet>
-        <title>Understanding Gratuity for Limited Contract UAE | ActuDubai</title>
+        <title>Understanding Gratuity for Limited Contract UAE: Key Insights and Calculations</title>
         <meta 
           name="description" 
           content="Understand gratuity for limited contracts in the UAE. Learn how to calculate gratuity, differences from unlimited contracts, and key updates to UAE Labour Law. Explore eligibility, termination scenarios, and important factors affecting gratuity payments." 

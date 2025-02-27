@@ -196,7 +196,7 @@ const TimeToReceiveGratuityUAE = () => {
   return (
     <>
       <Helmet>
-        <title>How Long Does It Take to Receive Gratuity in the UAE? | ActuDubai</title>
+        <title>How Long Does It Take to Receive Gratuity in the UAE? Understanding Your Rights and Timeline</title>
         <meta 
           name="description" 
           content="Discover everything you need to know about gratuity in the UAE, including how long it takes to receive it, its dependency on your basic salary, and rights for domestic workers." 

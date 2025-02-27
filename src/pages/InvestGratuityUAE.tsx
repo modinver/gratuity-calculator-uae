@@ -198,7 +198,7 @@ const InvestGratuityUAE = () => {
   return (
     <>
       <Helmet>
-        <title>The Best Way to Invest Your Gratuity in the UAE | ActuDubai</title>
+        <title>The Best Way to Invest Your Gratuity in the UAE: A Comprehensive Guide</title>
         <meta 
           name="description" 
           content="Discover the best way to invest gratuity in UAE! Explore effective strategies, savings plans, and financial tips for using gratuity wisely and planning for your future." 

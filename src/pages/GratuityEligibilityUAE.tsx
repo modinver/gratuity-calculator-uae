@@ -198,7 +198,7 @@ const GratuityEligibilityUAE = () => {
   return (
     <>
       <Helmet>
-        <title>Who is Eligible for Gratuity in UAE: A Comprehensive Guide | ActuDubai</title>
+        <title>Who is Eligible for Gratuity in UAE: A Comprehensive Guide to Eligibility Criteria and Calculation Methods</title>
         <meta 
           name="description" 
           content="Discover who is eligible for gratuity in the UAE with this comprehensive guide. Learn about eligibility criteria, calculation methods, and key regulations to ensure compliance with labor laws and fair end-of-service benefits." 

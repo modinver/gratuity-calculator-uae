@@ -200,7 +200,7 @@ const ResignationAffectGratuityUAE = () => {
   return (
     <>
       <Helmet>
-        <title>Does Resignation Affect Gratuity in UAE? | ActuDubai</title>
+        <title>Does Resignation Affect Gratuity in UAE? Understanding the Impact on Employee Benefits</title>
         <meta 
           name="description" 
           content="Does resignation affect gratuity in the UAE? Learn how contract type and service duration impact your end-of-service benefits. Understand deduction rules and exact calculations under UAE labor law." 

@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
@@ -8,6 +7,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { toast } from '@/components/ui/use-toast';
+import { Helmet } from 'react-helmet';
 
 // Componente para las Key Takeaways con estilo especial
 const KeyTakeaways = () => {
@@ -20,23 +20,23 @@ const KeyTakeaways = () => {
       <ul className="space-y-3">
         <li className="flex items-start">
           <div className="flex-shrink-0 h-5 w-5 rounded-full bg-gratuity-500 flex items-center justify-center text-white text-xs font-bold mt-0.5">1</div>
-          <p className="ml-3 text-gray-700"><strong>Gratuity law in the UAE</strong> ensures financial compensation for employees after completing one year of service.</p>
+          <p className="ml-3 text-gray-700">Gratuity is a mandatory end-of-service benefit in the UAE.</p>
         </li>
         <li className="flex items-start">
           <div className="flex-shrink-0 h-5 w-5 rounded-full bg-gratuity-500 flex items-center justify-center text-white text-xs font-bold mt-0.5">2</div>
-          <p className="ml-3 text-gray-700">The <strong>Federal Decree Law No. 33 of 2021</strong> standardizes end-of-service benefits across the UAE.</p>
+          <p className="ml-3 text-gray-700">The UAE Labour Law governs gratuity eligibility and calculation.</p>
         </li>
         <li className="flex items-start">
           <div className="flex-shrink-0 h-5 w-5 rounded-full bg-gratuity-500 flex items-center justify-center text-white text-xs font-bold mt-0.5">3</div>
-          <p className="ml-3 text-gray-700">Gratuity calculations are based on the <em>basic salary</em> and length of service.</p>
+          <p className="ml-3 text-gray-700">Gratuity calculation depends on the type of contract and years of service.</p>
         </li>
         <li className="flex items-start">
           <div className="flex-shrink-0 h-5 w-5 rounded-full bg-gratuity-500 flex items-center justify-center text-white text-xs font-bold mt-0.5">4</div>
-          <p className="ml-3 text-gray-700">Both <strong>employees and employers</strong> have specific rights and obligations under the gratuity law.</p>
+          <p className="ml-3 text-gray-700">Employees may forfeit gratuity under specific termination conditions.</p>
         </li>
         <li className="flex items-start">
           <div className="flex-shrink-0 h-5 w-5 rounded-full bg-gratuity-500 flex items-center justify-center text-white text-xs font-bold mt-0.5">5</div>
-          <p className="ml-3 text-gray-700">Understanding gratuity law is crucial for maintaining fair labor practices in the UAE.</p>
+          <p className="ml-3 text-gray-700">Staying informed on legal updates ensures compliance and fair practices.</p>
         </li>
       </ul>
     </div>
@@ -49,15 +49,18 @@ const TableOfContents = () => {
   const contentRef = useRef<HTMLDivElement>(null);
   
   const tocItems = [
-    { id: "section-1", title: "Overview of Gratuity in the UAE" },
-    { id: "section-2", title: "Legal Framework Governing Gratuity Payments" },
-    { id: "section-3", title: "Calculating Gratuity as per UAE Labor Law" },
-    { id: "section-4", title: "Gratuity Entitlement Based on Contract Duration" },
-    { id: "section-5", title: "Conditions and Exceptions in Gratuity Payments" },
-    { id: "section-6", title: "Key Takeaways for Employees and Employers" },
-    { id: "faq", title: "Frequently Asked Questions" },
+    { id: "introduction", title: "Introduction to Gratuity Law in the UAE" },
+    { id: "legal-framework", title: "Legal Framework Governing Gratuity" },
+    { id: "eligibility", title: "Eligibility Criteria for Gratuity" },
+    { id: "calculation-method", title: "Gratuity Calculation Method" },
+    { id: "forfeiture", title: "Forfeiture of Gratuity" },
+    { id: "recent-updates", title: "Recent Updates to Gratuity Laws" },
+    { id: "practical-examples", title: "Practical Examples" },
+    { id: "employer-obligations", title: "Employer Obligations" },
+    { id: "employee-rights", title: "Employee Rights" },
+    { id: "dispute-resolution", title: "Dispute Resolution" },
     { id: "conclusion", title: "Conclusion" },
-    { id: "call-to-action", title: "Call to Action" },
+    { id: "faq", title: "Frequently Asked Questions" }
   ];
 
   const toggleOpen = () => {
@@ -193,8 +196,22 @@ const GratuityLawUAEGuide = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const { language } = useLanguage();
+
   return (
     <>
+      <Helmet>
+        <title>Understanding Gratuity Law in the UAE: A Comprehensive Guide</title>
+        <meta 
+          name="description" 
+          content="Understand the UAE gratuity law and how end-of-service benefits are calculated based on your basic salary and years of service. Learn about employee rights, employer obligations, and key regulations under Federal Decree Law No. 33 of 2021." 
+        />
+        <meta 
+          name="keywords" 
+          content="gratuity law UAE, gratuity act 1972 calculation, UAE gratuity law for limited contracts, gratuity calculation as per UAE labor law, gratuity under payment of gratuity act 1972, gratuity payment rules in Dubai" 
+        />
+      </Helmet>
+      
       <Header />
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
@@ -203,7 +220,7 @@ const GratuityLawUAEGuide = () => {
           </h1>
           <div className="flex items-center text-gray-500 mb-6">
             <Clock className="h-4 w-4 mr-1" />
-            <span className="text-sm">Estimated reading time: 15 minutes</span>
+            <span className="text-sm">Estimated reading time: 10 minutes</span>
           </div>
           
           <SocialShareButtons />
@@ -212,352 +229,244 @@ const GratuityLawUAEGuide = () => {
           
           <article className="prose prose-blue max-w-none">
             <section id="introduction">
+              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Introduction to Gratuity Law in the UAE</h2>
               <p className="text-gray-700 leading-relaxed">
-                Gratuity law in the UAE refers to the legal regulations governing end-of-service benefits that employers must pay to employees who have completed at least one year of continuous service. This law is an essential aspect of the UAE's labor regulations, providing financial compensation to employees when their employment ends. Understanding the gratuity payment rules in Dubai is crucial for both employees and employers, as it impacts their rights and obligations within the workplace.
+                Gratuity, also known as end-of-service benefit, is a statutory entitlement for employees in the UAE upon completion of their service. It serves as a financial reward for their dedication and contribution to the company.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Gratuity serves as a critical part of employee rights, offering financial security during transitions between jobs. This benefit is vital for both expatriates and local workers, reinforcing the UAE's commitment to fair labor practices.
-              </p>
-            </section>
-            
-            <section id="section-1">
-              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Section 1: Overview of Gratuity in the UAE</h2>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">What is Gratuity?</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Gratuity is an end-of-service benefit that employers must provide to employees who complete a minimum of one year of continuous service. The amount is calculated based on the employee's basic salary and time spent at the company. As stated in the <a href="https://muhami.ae/articles/how-the-new-gratuity-law-in-the-uae-2022-affects-e/" target="_blank" rel="noopener noreferrer" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">gratuity law UAE</a>, it is a mandatory payment designed to provide employees with support once their employment ends.
-              </p>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Purpose of Gratuity</h3>
-              <p className="text-gray-700 leading-relaxed">The primary purposes of gratuity payments are:</p>
-              <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>Providing financial support to employees after the end of their employment.</li>
-                <li>Rewarding loyalty and long-term service to the company.</li>
-              </ul>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Legal Basis of Gratuity in the UAE</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Gratuity is governed by <strong>Federal Decree Law No. 33 of 2021</strong>, which came into effect in February 2022. This law replaced the earlier <strong>Federal Law No. 8/1980</strong>. The new law emphasizes fair treatment of employees and ensures proper compensation for their service. You can learn more about this law through the following source: <a href="https://muhami.ae/articles/how-the-new-gratuity-law-in-the-uae-2022-affects-e/" target="_blank" rel="noopener noreferrer" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">How the New Gratuity Law in the UAE 2022 Affects Employees</a>.
-              </p>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Applicability</h3>
-              <p className="text-gray-700 leading-relaxed">
-                The gratuity law UAE applies to all employees in the UAE who have completed one year or more of continuous service. This includes both expatriates and UAE nationals, thus extending fair labor practices to a diverse workforce. Additionally, you can read more about who is eligible for gratuity by exploring this article: <Link to="/gratuity-eligibility" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">Who is Eligible for Gratuity in UAE</Link>.
+                This guide provides a detailed overview of the gratuity law in the UAE, covering eligibility criteria, calculation methods, recent updates, and the rights and obligations of both employers and employees.
               </p>
             </section>
             
-            <section id="section-2">
-              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Section 2: Legal Framework Governing Gratuity Payments</h2>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Federal Decree Law No. 33 of 2021</h3>
-              <h4 className="mt-4 text-lg font-semibold text-gray-800">Key Provisions:</h4>
+            <section id="legal-framework">
+              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Legal Framework Governing Gratuity</h2>
               <p className="text-gray-700 leading-relaxed">
-                The <strong>Federal Decree Law No. 33 of 2021</strong> standardizes end-of-service benefits throughout the UAE by implementing the following provisions:
+                The gratuity law in the UAE is primarily governed by the Federal Decree Law No. 33 of 2021, also known as the UAE Labour Law. This law outlines the provisions related to end-of-service benefits, including eligibility, calculation, and payment procedures.
               </p>
-              <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>Ensures timely payment of gratuity within two weeks of termination.</li>
-                <li>Emphasizes clarity in calculating owed gratuity.</li>
-              </ul>
               <p className="text-gray-700 leading-relaxed">
-                For a more in-depth understanding, refer to <a href="https://www.alphapartners.co/blog/navigating-end-of-service-benefits-in-the-uae-a-comprehensive-guide" target="_blank" rel="noopener noreferrer" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">Navigating End-of-Service Benefits in the UAE: A Comprehensive Guide</a>.
-              </p>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Employer Obligations</h3>
-              <p className="text-gray-700 leading-relaxed">Employers are legally obligated to:</p>
-              <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>Accurately calculate gratuity benefits and ensure timely payments.</li>
-                <li>Failure to comply can lead to legal penalties.</li>
-              </ul>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Comparison with Payment of Gratuity Act 1972</h3>
-              <p className="text-gray-700 leading-relaxed">
-                It is important to note that the <strong>Payment of Gratuity Act 1972</strong> is specific to India and does not affect the UAE. However, examining different gratuity calculations across countries can enhance understanding. Knowledge of regulations from other regions fosters a broader perspective on gratuity matters. Learn more about this aspect in relation to the UAE by referring to the keyword: <em>gratuity under payment of gratuity act 1972</em> and check our article on <Link to="/gratuity-for-limited-contracts" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">Gratuity for Limited Contracts in UAE</Link>.
-              </p>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">International Perspectives</h3>
-              <p className="text-gray-700 leading-relaxed">
-                The UAE gratuity laws differ significantly from other countries. Notably, the UAE's system grants end-of-service benefits without imposing hefty restrictions, showcasing a unique legal framework aimed at ensuring employee security.
+                Key articles within the law address various aspects of gratuity, such as the conditions under which an employee is entitled to gratuity, the method of calculating the gratuity amount, and the circumstances in which an employee may forfeit their right to gratuity.
               </p>
             </section>
             
-            <section id="section-3">
-              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Section 3: Calculating Gratuity as per UAE Labor Law</h2>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Gratuity Calculation Formula</h3>
-              <p className="text-gray-700 leading-relaxed">Calculating gratuity in the UAE is straightforward:</p>
-              <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>
-                  <strong>For service between 1–5 years</strong>:
-                  <ul className="list-disc pl-6 mt-2">
-                    <li>Gratuity = 21 days of basic salary for each year of service.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>For service exceeding 5 years</strong>:
-                  <ul className="list-disc pl-6 mt-2">
-                    <li>Gratuity = (21 days' basic salary × 5 years) + (30 days' basic salary × (years of service - 5)).</li>
-                  </ul>
-                </li>
-              </ul>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Maximum Limit</h3>
+            <section id="eligibility">
+              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Eligibility Criteria for Gratuity</h2>
               <p className="text-gray-700 leading-relaxed">
-                The total gratuity amount cannot exceed two years' basic salary for employees serving more than five years. For further details, check this link: <a href="https://msofficegeek.com/uae-gratuity-calculator/" target="_blank" rel="noopener noreferrer" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">UAE Gratuity Calculator</a>.
+                To be eligible for gratuity in the UAE, an employee must have completed at least one year of continuous service with the same employer. Both full-time and part-time employees are entitled to gratuity, provided they meet this minimum service requirement.
               </p>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Components of Gratuity Calculation</h3>
-              <p className="text-gray-700 leading-relaxed">The calculation revolves around the basic salary alone. Essential considerations include:</p>
-              <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>
-                  <strong>Basic Salary</strong>:
-                  <ul className="list-disc pl-6 mt-2">
-                    <li>Gratuity is computed based on the last basic salary only, excluding any benefits like transportation or housing allowances.</li>
-                    <li>Refer to this useful source for more information: <a href="https://www.bayzat.com/blog/how-to-calculate-gratuity-ua/" target="_blank" rel="noopener noreferrer" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">How to Calculate Gratuity UAE</a>.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Length of Service</strong>:
-                  <ul className="list-disc pl-6 mt-2">
-                    <li>Includes all continuous years worked for the employer. Note that any partial years are calculated on a pro-rata basis.</li>
-                  </ul>
-                </li>
-              </ul>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Detailed Calculation Examples</h3>
-              <p className="text-gray-700 leading-relaxed">To clarify the calculation process, here are two examples:</p>
-              <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>
-                  <strong>Example 1</strong>: An employee with a basic salary of AED 10,000 and 3 years of service.
-                  <ul className="list-disc pl-6 mt-2">
-                    <li>Daily wage = AED 10,000 / 30 = AED 333.33.</li>
-                    <li>Gratuity = 21 days × AED 333.33 × 3 = AED 21,000.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Example 2</strong>: An employee with a basic salary of AED 12,000 and 7 years of service.
-                  <ul className="list-disc pl-6 mt-2">
-                    <li>First five years: 21 days × AED 400 × 5 = AED 42,000.</li>
-                    <li>Remaining two years: 30 days × AED 400 × 2 = AED 24,000.</li>
-                    <li>Total Gratuity = AED 42,000 + AED 24,000 = AED 66,000.</li>
-                  </ul>
-                </li>
-              </ul>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Factors Influencing Gratuity Amount</h3>
-              <p className="text-gray-700 leading-relaxed">Several factors may influence the total gratuity amount, including:</p>
-              <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>Unpaid leave can be excluded from total service length.</li>
-                <li>Any previous advances on gratuity payments should be adjusted accordingly. For a broader understanding, check this link: <Link to="/does-resignation-affect-gratuity-uae" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">Does Resignation Affect Gratuity UAE</Link>.</li>
-              </ul>
-            </section>
-            
-            <section id="section-4">
-              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Section 4: Gratuity Entitlement Based on Contract Duration</h2>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Employment Contract Types in the UAE</h3>
-              <h4 className="mt-4 text-lg font-semibold text-gray-800">Limited (Fixed-Term) Contracts:</h4>
-              <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>Limited contracts have specified start and end dates.</li>
-                <li>Under the new law, all contracts are now limited, simplifying employment processes. For more insights, visit: <a href="https://muhami.ae/articles/how-the-new-gratuity-law-in-the-uae-2022-affects-e/" target="_blank" rel="noopener noreferrer" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">How the New Gratuity Law in the UAE 2022 Affects Employees</a>.</li>
-              </ul>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Gratuity for Limited Contracts</h3>
-              <h4 className="mt-4 text-lg font-semibold text-gray-800">Entitlement:</h4>
               <p className="text-gray-700 leading-relaxed">
-                Employees on limited contracts are entitled to full gratuity pay after completing a year of service, regardless of their reason for leaving, be it resignation or termination.
-              </p>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Impact of Resignation or Termination</h3>
-              <h4 className="mt-4 text-lg font-semibold text-gray-800">Resignation:</h4>
-              <p className="text-gray-700 leading-relaxed">
-                Employees still receive full gratuity rights after a year, with no penalties for resigning.
-              </p>
-              
-              <h4 className="mt-4 text-lg font-semibold text-gray-800">Termination:</h4>
-              <p className="text-gray-700 leading-relaxed">
-                Employers are required to pay gratuity within two weeks following termination. For additional details, refer to: <a href="https://factohr.com/gratuity-law-in-uae/" target="_blank" rel="noopener noreferrer" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">FactoHR - Gratuity Law in UAE</a>.
+                However, certain categories of employees, such as those on probation or those terminated for gross misconduct, may not be eligible for gratuity.
               </p>
             </section>
             
-            <section id="section-5">
-              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Section 5: Conditions and Exceptions in Gratuity Payments</h2>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Eligibility Criteria</h3>
-              <h4 className="mt-4 text-lg font-semibold text-gray-800">Minimum Service Period:</h4>
+            <section id="calculation-method">
+              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Gratuity Calculation Method</h2>
               <p className="text-gray-700 leading-relaxed">
-                Employees must complete at least one year of continuous service to qualify for gratuity benefits, as described in this source: <a href="https://www.alphapartners.co/blog/navigating-end-of-service-benefits-in-the-uae-a-comprehensive-guide" target="_blank" rel="noopener noreferrer" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">Navigating End-of-Service Benefits in the UAE</a>.
+                The method of calculating gratuity in the UAE depends on the type of employment contract (limited or unlimited) and the length of service.
               </p>
               
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Components Excluded from Gratuity</h3>
-              <h4 className="mt-4 text-lg font-semibold text-gray-800">Excluded Allowances:</h4>
+              <h3 className="mt-6 text-xl font-semibold text-gray-800">Limited Contracts</h3>
               <p className="text-gray-700 leading-relaxed">
-                Gratuity calculations are strictly based on the employee's basic salary. The following allowances are excluded:
+                For employees with limited contracts (fixed-term contracts), the gratuity is calculated as follows:
               </p>
               <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>Housing allowance</li>
-                <li>Transportation allowance</li>
-                <li>Overtime pay</li>
-                <li>Other perks</li>
+                <li>21 days' basic salary for each year of service for the first five years.</li>
+                <li>30 days' basic salary for each additional year of service beyond five years.</li>
               </ul>
+              
+              <h3 className="mt-6 text-xl font-semibold text-gray-800">Unlimited Contracts</h3>
               <p className="text-gray-700 leading-relaxed">
-                For further insight, check this source: <a href="https://www.bayzat.com/blog/how-to-calculate-gratuity-ua/" target="_blank" rel="noopener noreferrer" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">How to Calculate Gratuity UAE</a>.
+                For employees with unlimited contracts, the gratuity is calculated differently based on the length of service:
               </p>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Exceptions and Special Cases</h3>
               <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>
-                  <strong>Termination for Gross Misconduct</strong>:
-                  <ul className="list-disc pl-6 mt-2">
-                    <li>When an employee is terminated for gross misconduct, they may lose their gratuity rights. Specific grounds for this forfeiture are outlined under Article 44 of the UAE Labor Law.</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Maximum Gratuity Payment Limit</strong>:
-                  <ul className="list-disc pl-6 mt-2">
-                    <li>The gratuity payment is capped at a maximum of two years' salary, ensuring fair compensation without imposing undue burdens on employers. Check here for more information: <a href="https://msofficegeek.com/uae-gratuity-calculator/" target="_blank" rel="noopener noreferrer" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">UAE Gratuity Calculator</a>.</li>
-                  </ul>
-                </li>
+                <li>Less than 1 year: No gratuity.</li>
+                <li>1-3 years: 1/3 of 21 days' basic salary for each year of service.</li>
+                <li>3-5 years: 2/3 of 21 days' basic salary for each year of service.</li>
+                <li>More than 5 years: 21 days' basic salary for each year of service for the first five years, and 30 days' basic salary for each additional year of service beyond five years.</li>
               </ul>
               
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Payment Timelines</h3>
+              <h3 className="mt-6 text-xl font-semibold text-gray-800">Important Considerations</h3>
               <p className="text-gray-700 leading-relaxed">
-                Employers must pay gratuity amounts within 14 days of the end of the employment contract.
+                Only the basic salary is considered for gratuity calculation. Allowances and other benefits are not included.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                The gratuity amount is capped at two years' salary.
               </p>
             </section>
             
-            <section id="section-6">
-              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Section 6: Key Takeaways for Employees and Employers</h2>
+            <section id="forfeiture">
+              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Forfeiture of Gratuity</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Under certain circumstances, an employee may forfeit their right to gratuity. These circumstances typically involve gross misconduct or violation of company policies.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Article 120 of the UAE Labour Law specifies the conditions under which an employer may terminate an employee without gratuity. These conditions include acts of violence, theft, disclosure of confidential information, and other serious offenses.
+              </p>
+            </section>
+            
+            <section id="recent-updates">
+              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Recent Updates to Gratuity Laws</h2>
+              <p className="text-gray-700 leading-relaxed">
+                The UAE Labour Law is subject to periodic updates and amendments to keep pace with evolving labor practices and economic conditions.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Federal Decree Law No. 33 of 2021 introduced several changes to the gratuity law, including clarifications on eligibility criteria, calculation methods, and payment procedures.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Staying informed about these updates is crucial for both employers and employees to ensure compliance and fair practices.
+              </p>
+            </section>
+            
+            <section id="practical-examples">
+              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Practical Examples</h2>
               
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">For Employees</h3>
-              <h4 className="mt-4 text-lg font-semibold text-gray-800">Understanding Your Rights:</h4>
+              <h3 className="mt-6 text-xl font-semibold text-gray-800">Example 1: Limited Contract</h3>
+              <p className="text-gray-700 leading-relaxed">
+                An employee with a limited contract has completed 6 years of service with a basic salary of AED 10,000 per month.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Gratuity Calculation:
+              </p>
               <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>Every employee is eligible for gratuity after completing one year of service.</li>
-                <li>Remember that gratuity is based on the last basic salary, excluding allowances.</li>
-                <li>Resignation does not affect entitlement under the new law.</li>
+                <li>(5 years x 21 days x AED 10,000) / 30 = AED 35,000</li>
+                <li>(1 year x 30 days x AED 10,000) / 30 = AED 10,000</li>
+                <li>Total Gratuity = AED 35,000 + AED 10,000 = AED 45,000</li>
               </ul>
               
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Action Points:</h3>
+              <h3 className="mt-6 text-xl font-semibold text-gray-800">Example 2: Unlimited Contract</h3>
+              <p className="text-gray-700 leading-relaxed">
+                An employee with an unlimited contract has completed 4 years of service with a basic salary of AED 8,000 per month.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Gratuity Calculation:
+              </p>
               <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>Maintain records of employment duration and salary details.</li>
-                <li>Consult HR for clarity around gratuity calculations.</li>
+                <li>(4 years x 21 days x AED 8,000) / 30 x (2/3) = AED 14,933.33</li>
               </ul>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">For Employers</h3>
-              <h4 className="mt-4 text-lg font-semibold text-gray-800">Compliance Obligations:</h4>
+            </section>
+            
+            <section id="employer-obligations">
+              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Employer Obligations</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Employers in the UAE have several obligations related to gratuity, including:
+              </p>
               <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>Ensure accurate calculations and timely gratuity disbursements.</li>
-                <li>Familiarize yourself with the latest labor laws to maintain compliance.</li>
+                <li>Calculating and paying gratuity to eligible employees upon termination of service.</li>
+                <li>Maintaining accurate records of employee service and salary.</li>
+                <li>Complying with all provisions of the UAE Labour Law related to gratuity.</li>
               </ul>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Best Practices:</h3>
+              <p className="text-gray-700 leading-relaxed">
+                Failure to meet these obligations may result in legal penalties and financial liabilities.
+              </p>
+            </section>
+            
+            <section id="employee-rights">
+              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Employee Rights</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Employees in the UAE have several rights related to gratuity, including:
+              </p>
               <ul className="list-disc pl-6 mt-2 text-gray-700">
-                <li>Maintain transparent communication with employees regarding end-of-service benefits.</li>
-                <li>Keep detailed records to streamline gratuity processing for departing employees.</li>
+                <li>The right to receive gratuity upon completion of at least one year of service.</li>
+                <li>The right to have their gratuity calculated accurately and in accordance with the law.</li>
+                <li>The right to dispute any discrepancies in the gratuity amount.</li>
               </ul>
+              <p className="text-gray-700 leading-relaxed">
+                Employees should be aware of their rights and seek legal advice if they believe their rights have been violated.
+              </p>
+            </section>
+            
+            <section id="dispute-resolution">
+              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Dispute Resolution</h2>
+              <p className="text-gray-700 leading-relaxed">
+                In case of disputes related to gratuity, both employers and employees have recourse to legal channels for resolution.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                The UAE Labour Law provides mechanisms for resolving labor disputes, including mediation, conciliation, and litigation.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Employees can file a complaint with the Ministry of Human Resources and Emiratisation (MOHRE) if they believe their gratuity rights have been violated.
+              </p>
+            </section>
+            
+            <section id="conclusion">
+              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Conclusion</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Understanding the gratuity law in the UAE is essential for both employers and employees to ensure compliance and fair practices.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                By adhering to the provisions of the UAE Labour Law and staying informed about recent updates, both parties can foster a positive and equitable working environment.
+              </p>
             </section>
             
             <section id="faq">
               <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Frequently Asked Questions</h2>
               
               <div className="mt-6">
-                <h3 className="text-xl font-semibold text-gray-800">What is the minimum service period required to qualify for gratuity in the UAE?</h3>
+                <h3 className="text-xl font-semibold text-gray-800">1. What is gratuity?</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Employees must complete at least one year of continuous service to qualify for gratuity benefits.
+                  Gratuity, also known as end-of-service benefit, is a statutory entitlement for employees in the UAE upon completion of their service.
                 </p>
               </div>
               
               <div className="mt-6">
-                <h3 className="text-xl font-semibold text-gray-800">How is gratuity calculated for employees with more than five years of service?</h3>
+                <h3 className="text-xl font-semibold text-gray-800">2. Who is eligible for gratuity?</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  For service exceeding five years, gratuity is calculated as (21 days' basic salary × 5 years) plus (30 days' basic salary × the number of years beyond five).
+                  Employees who have completed at least one year of continuous service with the same employer are eligible for gratuity.
                 </p>
               </div>
               
               <div className="mt-6">
-                <h3 className="text-xl font-semibold text-gray-800">Are housing and transportation allowances included in the gratuity calculation?</h3>
+                <h3 className="text-xl font-semibold text-gray-800">3. How is gratuity calculated?</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  No, gratuity calculations are based solely on the employee's basic salary. Housing, transportation, and other allowances are excluded.
+                  The method of calculating gratuity depends on the type of employment contract (limited or unlimited) and the length of service.
                 </p>
               </div>
               
               <div className="mt-6">
-                <h3 className="text-xl font-semibold text-gray-800">What happens to gratuity if an employee resigns?</h3>
+                <h3 className="text-xl font-semibold text-gray-800">4. Can an employee forfeit their right to gratuity?</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Employees who resign after completing one year of service are still entitled to full gratuity rights without any penalties.
+                  Under certain circumstances, such as gross misconduct or violation of company policies, an employee may forfeit their right to gratuity.
                 </p>
               </div>
               
               <div className="mt-6">
-                <h3 className="text-xl font-semibold text-gray-800">What are the consequences for employers who fail to pay gratuity on time?</h3>
+                <h3 className="text-xl font-semibold text-gray-800">5. What should an employee do in case of a gratuity dispute?</h3>
                 <p className="text-gray-700 leading-relaxed">
-                  Employers who fail to comply with gratuity payment timelines may face legal penalties and fines as per the UAE labor laws.
+                  Employees can file a complaint with the Ministry of Human Resources and Emiratisation (MOHRE) if they believe their gratuity rights have been violated.
                 </p>
               </div>
             </section>
             
-            <section id="conclusion">
-              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Conclusion</h2>
-              <p className="text-gray-700 leading-relaxed">
-                Understanding the <strong>gratuity law UAE</strong> is essential for both employees and employers. It helps safeguard rights and ensure compliance with labor regulations. Gratuity serves as an important form of compensation that reflects the value of employee services.
-              </p>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Encouragement to Stay Informed</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Staying updated with legal changes is crucial for making informed employment decisions. This awareness promotes a fair and productive work environment.
-              </p>
-            </section>
-            
-            <section id="call-to-action">
-              <h2 className="mt-8 text-2xl font-semibold text-gratuity-700">Call to Action</h2>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Engage with Readers</h3>
-              <p className="text-gray-700 leading-relaxed">
-                We invite you to share your experiences or ask questions about gratuity laws in the UAE. How has the new labor law impacted your understanding of gratuity?
-              </p>
-              
-              <h3 className="mt-6 text-xl font-semibold text-gray-800">Resources and Assistance</h3>
-              <p className="text-gray-700 leading-relaxed">
-                For more information, consider visiting legal firms or government portals. For instance, check the UAE Government page on <a href="https://u.ae/en/information-and-services/jobs/end-of-service-benefits" target="_blank" rel="noopener noreferrer" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">End of Service Benefits</a>.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                You might also want to reach out to HR professionals or legal advisors for personalized guidance regarding gratuity matters. This support can help you navigate the intricacies of the law effectively.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Understanding and applying the gratuity law in the UAE can lead to a more harmonious work relationship, ensuring financial security for employees while maintaining compliance for employers.
-              </p>
-              
-              <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">Additional Resources</h3>
-                <p className="mb-4 text-gray-700">Explore more content related to gratuity in the UAE:</p>
-                <ul className="space-y-2">
-                  <li>
-                    <Link to="/gratuity-calculation-uae-guide" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">
-                      Gratuity Calculation Guide in the UAE
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/unpaid-gratuity-uae" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">
-                      Guide on Gratuity Claims and Disputes
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/limited-vs-unlimited-contracts" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">
-                      Difference Between Limited and Unlimited Contracts
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/is-gratuity-taxable-in-uae" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">
-                      Gratuity Tax and Deductions in UAE
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/invest-gratuity-uae" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">
-                      Best Ways to Invest Your Gratuity
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            </section>
+            <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">Related Articles</h3>
+              <p className="mb-4 text-gray-700">Explore more content about gratuity in the UAE:</p>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/gratuity-calculation-uae-guide" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">
+                    Gratuity Calculation Guide in the UAE
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/who-is-eligible-for-gratuity-uae" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">
+                    Who Is Eligible for Gratuity in UAE
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/how-to-claim-gratuity-uae" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">
+                    How to Claim Gratuity in UAE
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/best-way-invest-gratuity-uae" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">
+                    The Best Way to Invest Your Gratuity in the UAE
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/is-gratuity-taxable-in-uae" className="text-gratuity-600 hover:text-gratuity-800 hover:underline">
+                    Is Gratuity Taxable in UAE?
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </article>
           
           <SocialShareButtons />
@@ -565,9 +474,13 @@ const GratuityLawUAEGuide = () => {
           <Separator className="my-12" />
           
           <div className="flex justify-between items-center">
-            <Link to="/" className="text-gratuity-600 hover:text-gratuity-800 flex items-center">
+            <Link to="/is-gratuity-taxable-in-uae" className="text-gratuity-600 hover:text-gratuity-800 flex items-center">
               <ChevronUp className="h-4 w-4 mr-1" />
-              Back to Home
+              Is Gratuity Taxable in UAE?
+            </Link>
+            <Link to="/who-is-eligible-for-gratuity-uae" className="text-gratuity-600 hover:text-gratuity-800 flex items-center">
+              Who Is Eligible for Gratuity in UAE
+              <ChevronUp className="h-4 w-4 ml-1" />
             </Link>
           </div>
         </div>
