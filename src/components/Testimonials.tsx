@@ -1,35 +1,49 @@
 
 import React from 'react';
+import { Star } from 'lucide-react';
 
 interface TestimonialProps {
   content: string;
   author: string;
   role: string;
   image: string;
+  rating: number;
+  date: string;
 }
 
-const Testimonial: React.FC<TestimonialProps> = ({ content, author, role, image }) => {
+const Testimonial: React.FC<TestimonialProps> = ({ content, author, role, image, rating, date }) => {
   return (
-    <div className="flex flex-col h-full bg-white p-8 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-      <div className="flex-1">
-        <svg className="h-8 w-8 text-gratuity-400 mb-4" fill="currentColor" viewBox="0 0 32 32">
-          <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-        </svg>
-        <p className="text-gray-700 text-lg leading-relaxed italic">
-          {content}
-        </p>
-      </div>
-      <div className="mt-6">
-        <div className="flex items-center">
-          <div className="flex-shrink-0">
-            <img className="h-12 w-12 rounded-full object-cover" src={image} alt={author} />
-          </div>
-          <div className="ml-4">
-            <p className="text-base font-medium text-gray-900">{author}</p>
-            <p className="text-sm text-gray-600">{role}</p>
-          </div>
+    <div className="flex flex-col bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+      <div className="flex items-center mb-4">
+        <img 
+          className="h-10 w-10 rounded-full object-cover mr-4" 
+          src={image} 
+          alt={author} 
+        />
+        <div>
+          <h4 className="text-gray-900 font-medium">{author}</h4>
+          <div className="text-sm text-gray-500">{role}</div>
         </div>
       </div>
+      
+      <div className="flex items-center mb-2">
+        {[...Array(5)].map((_, i) => (
+          <Star
+            key={i}
+            size={16}
+            className={`${
+              i < rating 
+                ? "fill-yellow-400 text-yellow-400" 
+                : "fill-gray-200 text-gray-200"
+            }`}
+          />
+        ))}
+        <span className="ml-2 text-sm text-gray-500">{date}</span>
+      </div>
+      
+      <p className="text-gray-600 text-sm leading-relaxed">
+        {content}
+      </p>
     </div>
   );
 };
@@ -37,47 +51,76 @@ const Testimonial: React.FC<TestimonialProps> = ({ content, author, role, image 
 const Testimonials = () => {
   const testimonials = [
     {
-      content: "This calculator helped me understand exactly how much gratuity I was entitled to. When my employer offered me less, I was able to confidently negotiate by showing the correct calculations.",
-      author: "James T.",
-      role: "Engineer, 6 years in Dubai",
-      image: "/placeholder.svg"
+      content: "This calculator was incredibly helpful and accurate. When my employer offered me less than what I was entitled to, I confidently negotiated using the calculations from this tool. The process was smooth and user-friendly.",
+      author: "James Thompson",
+      role: "Senior Engineer",
+      image: "/placeholder.svg",
+      rating: 5,
+      date: "2 weeks ago"
     },
     {
-      content: "After using this tool, I discovered my gratuity should be almost 30% higher than what my company had initially calculated. It's been a significant saving!",
-      author: "Sarah M.",
-      role: "Accountant, 4 years in Abu Dhabi",
-      image: "/placeholder.svg"
+      content: "I discovered my gratuity should be almost 30% higher than initially calculated by my company. The detailed breakdown helped me understand my rights better. Excellent resource for UAE employees!",
+      author: "Sarah Mitchell",
+      role: "Financial Analyst",
+      image: "/placeholder.svg",
+      rating: 5,
+      date: "1 month ago"
     },
     {
-      content: "The information about limited and unlimited contracts helped me make the right decision when signing my new contract. It has definitely given me a financial advantage.",
-      author: "Mohammed A.",
-      role: "Marketing Executive, UAE",
-      image: "/placeholder.svg"
+      content: "The information about limited and unlimited contracts was eye-opening. Thanks to this calculator, I made an informed decision when signing my new contract. Very grateful for this free tool.",
+      author: "Mohammed Ahmed",
+      role: "Marketing Director",
+      image: "/placeholder.svg",
+      rating: 4,
+      date: "2 months ago"
+    },
+    {
+      content: "Clear, precise, and trustworthy calculations. The explanations for each step made it easy to understand how my gratuity was determined. Highly recommend this to all UAE workers.",
+      author: "Lisa Chen",
+      role: "HR Manager",
+      image: "/placeholder.svg",
+      rating: 5,
+      date: "3 months ago"
     }
   ];
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-900">
-          Stories from Grateful Gratuity Recipients
-        </h2>
-        <p className="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
-          Thousands of expatriates and residents in the United Arab Emirates trust our calculator to plan their financial future.
-        </p>
-      </div>
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {testimonials.map((testimonial, index) => (
-          <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
-            <Testimonial
-              content={testimonial.content}
-              author={testimonial.author}
-              role={testimonial.role}
-              image={testimonial.image}
-            />
+    <div className="bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            What Our Users Say
+          </h2>
+          <div className="mt-4 flex items-center justify-center">
+            <div className="flex items-center">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  size={20}
+                  className="fill-yellow-400 text-yellow-400"
+                />
+              ))}
+            </div>
+            <p className="ml-2 text-lg font-medium text-gray-900">
+              4.9 out of 5
+            </p>
+            <p className="ml-2 text-sm text-gray-500">
+              Based on 200+ reviews
+            </p>
           </div>
-        ))}
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              <Testimonial {...testimonial} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
