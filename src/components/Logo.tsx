@@ -2,11 +2,12 @@
 import React from 'react';
 import { Calculator, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Separator } from '@/components/ui/separator';
 
 const Logo = () => {
   return (
-    <Link to="/" className="flex flex-col items-center">
-      <div className="relative flex items-center justify-center">
+    <Link to="/" className="flex items-center">
+      <div className="relative flex items-center justify-center mr-3">
         {/* Fondo de la calculadora */}
         <div className="h-10 w-10 bg-gradient-to-br from-gratuity-600 to-gratuity-800 rounded-lg shadow-md flex items-center justify-center transform -rotate-3">
           <Calculator size={20} className="text-white" />
@@ -18,9 +19,10 @@ const Logo = () => {
         </div>
       </div>
       
-      <div className="flex flex-col items-center mt-1">
+      <div className="flex flex-col">
         <span className="text-lg font-bold text-gratuity-800 leading-none">ActuDbai</span>
-        <span className="text-xs text-gray-600 font-light -mt-0.5">gratuity calculator</span>
+        <Separator className="my-1" />
+        <span className="text-xs text-gray-600 font-light">gratuity calculator</span>
       </div>
     </Link>
   );
