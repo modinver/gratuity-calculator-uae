@@ -16,6 +16,7 @@ import GratuityTaxUAE from "./pages/GratuityTaxUAE";
 import ResignationAffectGratuityUAE from "./pages/ResignationAffectGratuityUAE";
 import TimeToReceiveGratuityUAE from "./pages/TimeToReceiveGratuityUAE";
 import GratuityLimitedContractUAE from "./pages/GratuityLimitedContractUAE";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/does-resignation-affect-gratuity-uae" element={<ResignationAffectGratuityUAE />} />
             <Route path="/how-long-to-receive-gratuity-uae" element={<TimeToReceiveGratuityUAE />} />
             <Route path="/gratuity-limited-contract-uae" element={<GratuityLimitedContractUAE />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
