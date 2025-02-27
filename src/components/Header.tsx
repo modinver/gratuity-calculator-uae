@@ -1,7 +1,7 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Search } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 
@@ -17,12 +17,27 @@ interface DropdownProps {
 
 const NavDropdown: React.FC<DropdownProps> = ({ title, items, isOpen, toggleDropdown }) => {
   const { language } = useLanguage();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node) && isOpen) {
+        toggleDropdown();
+      }
+    };
+    
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, toggleDropdown]);
   
   return (
-    <div className="relative group">
+    <div className="relative group" ref={dropdownRef}>
       <button 
-        className="flex items-center text-gray-600 hover:text-gratuity-700 transition-colors"
+        className="flex items-center text-gray-600 hover:text-gratuity-700 transition-colors text-sm font-medium py-2"
         onClick={toggleDropdown}
+        aria-expanded={isOpen}
       >
         {title}
         <ChevronDown 
@@ -31,12 +46,12 @@ const NavDropdown: React.FC<DropdownProps> = ({ title, items, isOpen, toggleDrop
       </button>
       
       {isOpen && (
-        <div className={`absolute z-50 ${language === 'ar' ? 'right-0' : 'left-0'} mt-2 w-64 bg-white border border-gray-100 rounded-md shadow-lg py-2 animate-fade-in`}>
+        <div className={`absolute z-50 ${language === 'ar' ? 'right-0' : 'left-0'} mt-0 w-56 bg-white rounded-md shadow-lg py-1 animate-fade-in border border-gray-100`}>
           {items.map((item, index) => (
             <Link 
               key={index}
               to={item.href}
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gratuity-50 hover:text-gratuity-700"
+              className="block px-4 py-2 text-xs hover:bg-gray-50 text-gray-700 hover:text-gratuity-700"
               onClick={toggleDropdown}
             >
               {item.label}
@@ -105,27 +120,27 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-sm border-b border-gray-100">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-14">
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
-              <span className="text-xl font-semibold text-gratuity-800">
+              <span className="text-lg font-semibold text-gratuity-800">
                 Gratuity UAE
               </span>
             </Link>
           </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <ul className="flex space-x-8">
+          <nav className="hidden md:flex items-center">
+            <ul className="flex items-center space-x-5">
               <li>
-                <Link to="/" className="text-gray-600 hover:text-gratuity-700 transition-colors">
+                <Link to="/" className="text-sm font-medium text-gray-600 hover:text-gratuity-700 transition-colors py-2">
                   {t('home')}
                 </Link>
               </li>
               <li>
-                <Link to="/gratuity-calculation-uae-guide" className="text-gray-600 hover:text-gratuity-700 transition-colors">
+                <Link to="/gratuity-calculation-uae-guide" className="text-sm font-medium text-gray-600 hover:text-gratuity-700 transition-colors py-2">
                   Gratuity Calculator Guide
                 </Link>
               </li>
@@ -154,18 +169,36 @@ const Header = () => {
                 />
               </li>
               <li>
-                <Link to="/gratuity-faqs" className="text-gray-600 hover:text-gratuity-700 transition-colors">
-                  {t('faqs')}
+                <NavDropdown 
+                  title="Tax & Deductions"
+                  items={navItems.tax.items}
+                  isOpen={openDropdown === 'tax'}
+                  toggleDropdown={() => toggleDropdown('tax')}
+                />
+              </li>
+              <li>
+                <NavDropdown 
+                  title="Managing Gratuity"
+                  items={navItems.managing.items}
+                  isOpen={openDropdown === 'managing'}
+                  toggleDropdown={() => toggleDropdown('managing')}
+                />
+              </li>
+              <li>
+                <Link to="/gratuity-faqs" className="text-sm font-medium text-gray-600 hover:text-gratuity-700 transition-colors py-2">
+                  FAQs
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-600 hover:text-gratuity-700 transition-colors">
-                  {t('contact')}
+                <Link to="/contact" className="text-sm font-medium text-gray-600 hover:text-gratuity-700 transition-colors py-2">
+                  Contact
                 </Link>
               </li>
             </ul>
             
-            <LanguageSwitcher />
+            <div className="ml-5 flex items-center">
+              <LanguageSwitcher />
+            </div>
           </nav>
           
           {/* Mobile Menu Button */}
@@ -174,13 +207,14 @@ const Header = () => {
             
             <button 
               onClick={toggleMenu}
-              className="ml-2 inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gratuity-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gratuity-500"
+              className="ml-2 inline-flex items-center justify-center p-1.5 rounded-md text-gray-700 hover:text-gratuity-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gratuity-500"
+              aria-expanded={isMenuOpen}
             >
               <span className="sr-only">Open main menu</span>
               {isMenuOpen ? (
-                <X className="block h-6 w-6" aria-hidden="true" />
+                <X className="block h-5 w-5" aria-hidden="true" />
               ) : (
-                <Menu className="block h-6 w-6" aria-hidden="true" />
+                <Menu className="block h-5 w-5" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -189,25 +223,27 @@ const Header = () => {
       
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-b border-gray-100 animate-fade-in">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link 
-              to="/" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t('home')}
-            </Link>
-            <Link 
-              to="/gratuity-calculation-uae-guide" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Gratuity Calculator Guide
-            </Link>
+        <div className="md:hidden bg-white border-b border-gray-100 animate-fade-in absolute w-full shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 divide-y divide-gray-100">
+            <div className="py-1">
+              <Link 
+                to="/" 
+                className="block px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('home')}
+              </Link>
+              <Link 
+                to="/gratuity-calculation-uae-guide" 
+                className="block px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Gratuity Calculator Guide
+              </Link>
+            </div>
             
             {/* Gratuity Laws & Rules */}
-            <div className="border-t border-gray-100 pt-2 mt-2">
+            <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                 Gratuity Laws & Rules
               </p>
@@ -215,7 +251,7 @@ const Header = () => {
                 <Link 
                   key={index}
                   to={item.href}
-                  className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50 pl-6"
+                  className="block px-3 py-1.5 rounded-md text-xs text-gray-700 hover:text-gratuity-700 hover:bg-gray-50 ml-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -224,7 +260,7 @@ const Header = () => {
             </div>
             
             {/* Gratuity Calculation */}
-            <div className="border-t border-gray-100 pt-2 mt-2">
+            <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                 Gratuity Calculation
               </p>
@@ -232,7 +268,7 @@ const Header = () => {
                 <Link 
                   key={index}
                   to={item.href}
-                  className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50 pl-6"
+                  className="block px-3 py-1.5 rounded-md text-xs text-gray-700 hover:text-gratuity-700 hover:bg-gray-50 ml-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -241,7 +277,7 @@ const Header = () => {
             </div>
             
             {/* Gratuity Claims & Disputes */}
-            <div className="border-t border-gray-100 pt-2 mt-2">
+            <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                 Gratuity Claims & Disputes
               </p>
@@ -249,7 +285,7 @@ const Header = () => {
                 <Link 
                   key={index}
                   to={item.href}
-                  className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50 pl-6"
+                  className="block px-3 py-1.5 rounded-md text-xs text-gray-700 hover:text-gratuity-700 hover:bg-gray-50 ml-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -258,7 +294,7 @@ const Header = () => {
             </div>
             
             {/* Gratuity Tax & Deductions */}
-            <div className="border-t border-gray-100 pt-2 mt-2">
+            <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                 Gratuity Tax & Deductions
               </p>
@@ -266,7 +302,7 @@ const Header = () => {
                 <Link 
                   key={index}
                   to={item.href}
-                  className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50 pl-6"
+                  className="block px-3 py-1.5 rounded-md text-xs text-gray-700 hover:text-gratuity-700 hover:bg-gray-50 ml-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -275,7 +311,7 @@ const Header = () => {
             </div>
             
             {/* Managing Your Gratuity */}
-            <div className="border-t border-gray-100 pt-2 mt-2">
+            <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                 Managing Your Gratuity
               </p>
@@ -283,7 +319,7 @@ const Header = () => {
                 <Link 
                   key={index}
                   to={item.href}
-                  className="block px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50 pl-6"
+                  className="block px-3 py-1.5 rounded-md text-xs text-gray-700 hover:text-gratuity-700 hover:bg-gray-50 ml-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
@@ -291,20 +327,20 @@ const Header = () => {
               ))}
             </div>
             
-            <div className="border-t border-gray-100 pt-2 mt-2">
+            <div className="py-1">
               <Link 
                 to="/gratuity-faqs" 
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
+                className="block px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('faqs')}
+                FAQs
               </Link>
               <Link 
                 to="/contact" 
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
+                className="block px-3 py-1.5 rounded-md text-sm font-medium text-gray-700 hover:text-gratuity-700 hover:bg-gray-50"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('contact')}
+                Contact
               </Link>
             </div>
           </div>
