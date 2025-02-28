@@ -20,6 +20,10 @@ export default defineConfig(({ mode }) => ({
     viteStaticCopy({
       targets: [
         {
+          src: 'public/sitemap.xml',
+          dest: ''
+        },
+        {
           src: 'public/*',
           dest: ''
         }
