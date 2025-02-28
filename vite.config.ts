@@ -40,6 +40,8 @@ export default defineConfig(({ mode }) => ({
     assetsDir: 'assets',
     emptyOutDir: true,
     copyPublicDir: true, // Ensure public files like sitemap.xml are copied
+    // Configuración para SSG
+    ssrManifest: true,
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
@@ -56,5 +58,13 @@ export default defineConfig(({ mode }) => ({
         contact: path.resolve(__dirname, 'contact.html'),
       }
     }
+  },
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
+    crittersOptions: {
+      preload: 'js-lazy',
+      preloadFonts: true,
+    },
   }
 }));
