@@ -5,15 +5,23 @@ import App from './App.tsx'
 import './index.css'
 
 // Detección de entorno para renderizado
-const renderMethod = import.meta.env.SSR ? ReactDOM.hydrateRoot : ReactDOM.createRoot
-
-// Renderizar la aplicación
 const app = document.getElementById('root') as HTMLElement
-renderMethod(app).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+
+if (import.meta.env.SSR) {
+  // En entorno SSR, usar hydrateRoot
+  ReactDOM.hydrateRoot(app, 
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+} else {
+  // En entorno cliente, usar createRoot
+  ReactDOM.createRoot(app).render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
 
 // Exportación para SSG
 export { App }
