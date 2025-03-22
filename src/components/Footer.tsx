@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -29,7 +28,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/limited-vs-unlimited-contracts" className="text-gray-300 hover:text-[#38bdf8] transition-colors flex items-center">
+                <Link to="/gratuity-limited-contract-uae" className="text-gray-300 hover:text-[#38bdf8] transition-colors flex items-center">
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#38bdf8] mr-2"></span>
                   Contract Types
                 </Link>
@@ -116,7 +115,6 @@ const Footer = () => {
             </div>
           </div>
           
-          {/* Social Icons Centered */}
           <div className="flex justify-center space-x-6 mb-8">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#38bdf8] hover:text-white transition-colors">
               <Facebook size={24} className="drop-shadow-lg" />
@@ -140,7 +138,6 @@ const Footer = () => {
             </a>
           </div>
           
-          {/* Decorative elements */}
           <div className="flex justify-center mb-4">
             <Star className="text-[#38bdf8] mx-1" size={16} />
             <Heart className="text-[#38bdf8] mx-1" size={16} />

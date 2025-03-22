@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, Search } from 'lucide-react';
@@ -77,7 +76,6 @@ const Header = () => {
     setOpenDropdown(openDropdown === dropdown ? null : dropdown);
   };
 
-  // Navigation structure updated with available pillar pages
   const navItems = {
     laws: {
       title: 'Gratuity Laws',
@@ -118,7 +116,6 @@ const Header = () => {
             <Logo />
           </div>
           
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center">
             <ul className="flex items-center space-x-5">
               <li>
@@ -161,7 +158,6 @@ const Header = () => {
             </ul>
           </nav>
           
-          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button 
               onClick={toggleMenu}
@@ -179,7 +175,6 @@ const Header = () => {
         </div>
       </div>
       
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white border-b border-gray-100 animate-fade-in absolute w-full shadow-lg">
           <div className="px-2 pt-2 pb-3 space-y-1 divide-y divide-gray-100">
@@ -193,7 +188,6 @@ const Header = () => {
               </Link>
             </div>
             
-            {/* Gratuity Laws */}
             <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                 Gratuity Laws
@@ -210,7 +204,6 @@ const Header = () => {
               ))}
             </div>
             
-            {/* Gratuity Calculation */}
             <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                 Gratuity Calculation
@@ -227,7 +220,6 @@ const Header = () => {
               ))}
             </div>
             
-            {/* Gratuity Claims & Disputes */}
             <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                 Claims & Disputes
@@ -244,7 +236,6 @@ const Header = () => {
               ))}
             </div>
             
-            {/* Tax & Management */}
             <div className="py-1">
               <p className="px-3 py-1 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                 Tax & Management
