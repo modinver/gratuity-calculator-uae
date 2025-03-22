@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, MapPin, Heart, Star } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Linkedin, Youtube, Mail, MapPin, Heart, Star, Map } from 'lucide-react';
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -98,6 +99,17 @@ const Footer = () => {
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#38bdf8] mr-2"></span>
                   Cookie Policy
                 </Link>
+              </li>
+              <li>
+                <a 
+                  href="/sitemap.xml" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-gray-300 hover:text-[#38bdf8] transition-colors flex items-center"
+                >
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#38bdf8] mr-2"></span>
+                  <Map size={14} className="inline mr-1" /> Sitemap
+                </a>
               </li>
             </ul>
           </div>

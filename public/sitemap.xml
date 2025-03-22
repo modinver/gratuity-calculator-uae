@@ -3,20 +3,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://gratuitylaw.com/</loc>
+        <priority>1.0</priority>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>https://gratuitylaw.com/contact</loc>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://gratuitylaw.com/gratuity-law-uae-guide</loc>
+        <priority>0.9</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://gratuitylaw.com/gratuity-calculation-uae-guide</loc>
+        <priority>0.9</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://gratuitylaw.com/who-is-eligible-for-gratuity-uae</loc>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://gratuitylaw.com/how-to-claim-gratuity-uae</loc>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://gratuitylaw.com/best-way-invest-gratuity-uae</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://gratuitylaw.com/is-gratuity-taxable-in-uae</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://gratuitylaw.com/does-resignation-affect-gratuity-uae</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://gratuitylaw.com/how-long-to-receive-gratuity-uae</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
     </url>
     <url>
         <loc>https://gratuitylaw.com/gratuity-limited-contract-uae</loc>
+        <priority>0.8</priority>
+        <changefreq>monthly</changefreq>
     </url>
 </urlset>

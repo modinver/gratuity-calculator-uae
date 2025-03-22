@@ -20,7 +20,7 @@ const Index = () => {
         <title>UAE Gratuity Calculator | Accurate End-of-Service Benefits Calculation</title>
         <meta 
           name="description" 
-          content="Calculate your UAE gratuity payment accurately with our free online calculator. Learn about UAE labor law, eligibility criteria, contract types impact, and receive expert guidance on claiming your end-of-service benefits." 
+          content="Easily determine your end-of-service gratuity and get expert insights on UAE gratuity rules." 
         />
         <meta 
           name="keywords" 
