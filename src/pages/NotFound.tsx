@@ -4,6 +4,7 @@ import { useLocation, Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Helmet } from 'react-helmet';
 
 const NotFound = () => {
   const location = useLocation();
@@ -18,6 +19,15 @@ const NotFound = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Page Not Found | GratuityLaw.com</title>
+        <meta 
+          name="description" 
+          content="The page you were looking for could not be found. Explore our UAE gratuity calculator, guides on UAE labor law, and resources for end-of-service benefits calculation." 
+        />
+        <meta name="robots" content="noindex, follow" />
+      </Helmet>
+      
       <Header />
       
       <main className="flex-grow flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -46,18 +56,18 @@ const NotFound = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/gratuity-law-uae" className="text-gratuity-600 hover:text-gratuity-800 transition-colors">
+                <Link to="/gratuity-law-uae-guide" className="text-gratuity-600 hover:text-gratuity-800 transition-colors">
                   {t('uae_law')}
                 </Link>
               </li>
               <li>
-                <Link to="/gratuity-calculation-uae" className="text-gratuity-600 hover:text-gratuity-800 transition-colors">
+                <Link to="/gratuity-calculation-uae-guide" className="text-gratuity-600 hover:text-gratuity-800 transition-colors">
                   {t('how_calculate')}
                 </Link>
               </li>
               <li>
-                <Link to="/gratuity-faqs" className="text-gratuity-600 hover:text-gratuity-800 transition-colors">
-                  {t('faqs')}
+                <Link to="/who-is-eligible-for-gratuity-uae" className="text-gratuity-600 hover:text-gratuity-800 transition-colors">
+                  {t('gratuity_eligibility')}
                 </Link>
               </li>
             </ul>

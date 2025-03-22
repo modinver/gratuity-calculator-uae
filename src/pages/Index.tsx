@@ -20,11 +20,11 @@ const Index = () => {
         <title>UAE Gratuity Calculator | Accurate End-of-Service Benefits Calculation</title>
         <meta 
           name="description" 
-          content="Calculate your UAE gratuity payment accurately with our free online calculator. Learn about UAE labor law, eligibility criteria, and how to claim your end-of-service benefits." 
+          content="Calculate your UAE gratuity payment accurately with our free online calculator. Learn about UAE labor law, eligibility criteria, contract types impact, and receive expert guidance on claiming your end-of-service benefits." 
         />
         <meta 
           name="keywords" 
-          content="UAE gratuity calculator, end of service calculator UAE, gratuity payment UAE, UAE labor law gratuity, calculate gratuity online, gratuity eligibility UAE, how to claim gratuity" 
+          content="UAE gratuity calculator, end of service calculator UAE, gratuity payment UAE, UAE labor law gratuity, calculate gratuity online, gratuity eligibility UAE, how to claim gratuity, limited contract gratuity UAE" 
         />
         <link rel="canonical" href="https://gratuitylaw.com/" />
       </Helmet>
