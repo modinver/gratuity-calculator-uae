@@ -1,5 +1,6 @@
+
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://actudubai.com/sitemap.xml
+Sitemap: https://gratuitylaw.com/sitemap.xml

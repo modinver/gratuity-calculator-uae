@@ -14,7 +14,7 @@ const Logo = () => {
       </div>
       
       <div className="flex flex-col ml-3">
-        <span className="text-lg font-bold text-gratuity-800 leading-tight tracking-wide">ActuDubai.com</span>
+        <span className="text-lg font-bold text-gratuity-800 leading-tight tracking-wide">GratuityLaw.com</span>
         <span className="text-xs text-gray-600 leading-tight tracking-wide">Gratuity Calculator</span>
       </div>
     </Link>
