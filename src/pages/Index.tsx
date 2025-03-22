@@ -27,6 +27,7 @@ const Index = () => {
           content="UAE gratuity calculator, end of service calculator UAE, gratuity payment UAE, UAE labor law gratuity, calculate gratuity online, gratuity eligibility UAE, how to claim gratuity, limited contract gratuity UAE" 
         />
         <link rel="canonical" href="https://gratuitylaw.com/" />
+        <link rel="icon" type="image/png" href="/lovable-uploads/103b8bdd-c929-4bee-ad89-4e43fa11af15.png" />
       </Helmet>
 
       <div className="flex flex-col min-h-screen">
