@@ -4,6 +4,10 @@
     { "source": "/(.*)\\.html", "destination": "/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ],
+  "redirects": [
+    { "source": "http://gratuitylaw.com/:path*", "destination": "https://gratuitylaw.com/:path*", "permanent": true },
+    { "source": "http://www.gratuitylaw.com/:path*", "destination": "https://gratuitylaw.com/:path*", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -11,6 +15,10 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains; preload"
         }
       ]
     },

@@ -2,5 +2,8 @@
 User-agent: *
 Allow: /
 
+# Preferred domain
+host: https://gratuitylaw.com
+
 # Sitemap
 Sitemap: https://gratuitylaw.com/sitemap.xml
